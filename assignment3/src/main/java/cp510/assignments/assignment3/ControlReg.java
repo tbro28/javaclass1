@@ -1,14 +1,12 @@
 package cp510.assignments.assignment3;
 
 
-
-
-/***
- This class encapsulates a control register.
- It can encode and decode an integer representing the control,
- start, count, data, security and origin fields.
- It has the following constructor and methods:
+/**
+ *  This class encapsulates a control register.
+ *  It can encode and decode an integer representing the control,
+ *  start, count, data, security and origin fields.
  *
+ * @author Tim
  */
 public class ControlReg {
 
@@ -26,77 +24,146 @@ public class ControlReg {
     private static int securityMask = 0b0000_0_00_0000_11_000;
     private static int originMask = 0b0000_0_00_0000_00_111;
 
-
+    /**
+     * Decodes the value sent as input.
+     *
+     * @param reg the value to decode
+     */
     public ControlReg(int reg)
     {
         this.decodeReg(reg);
     }
 
-
-
+    /**
+     * Gets the control value of the object.
+     *
+     * @return the control value
+     */
     public int getControl()
     {
         return this.control;
     }
+
+    /**
+     * Sets the control value of the object.
+     *
+     * @param control sets the control value
+     */
     public void setControl(int control)
     {
         this.control = control;
     }
 
 
+    /**
+     * Gets the start value of the object.
+     *
+     * @return the start value
+     */
     public int getStart()
     {
         return this.start;
     }
+
+    /**
+     * Sets the start value of the object.
+     *
+     * @param start sets the control value
+     */
     public void setStart(int start)
     {
         this.start = start;
     }
 
 
+    /**
+     * Gets the count value of the object.
+     *
+     * @return the count value
+     */
     public int getCount()
     {
         return this.count;
     }
+
+    /**
+     * Sets the count value of the object.
+     *
+     * @param count sets the count value
+     */
     public void setCount(int count)
     {
         this.count = count;
     }
 
 
+    /**
+     * Gets the data value of the object.
+     *
+     * @return the data value
+     */
     public int getData()
     {
         return this.data;
     }
+
+    /**
+     * Sets the data value of the object.
+     *
+     * @param data sets the control value
+     */
     public void setData(int data)
     {
         this.data = data;
     }
 
 
+    /**
+     * Gets the security value of the object.
+     *
+     * @return the security value
+     */
     public int getSecurity()
     {
         return this.security;
     }
+
+    /**
+     * Sets the security value of the object.
+     *
+     * @param security sets the control value
+     */
     public void setSecurity(int security)
     {
         this.security = security;
     }
 
 
+    /**
+     * Gets the origin value of the object.
+     *
+     * @return the origin value
+     */
     public int getOrigin()
     {
         return this.origin;
     }
+
+    /**
+     * Sets the origin value of the object.
+     *
+     * @param origin sets the control value
+     */
     public void setOrigin(int origin)
     {
         this.origin = origin;
     }
 
-    //Setters and getters for encapsulated properties.
-
-
-
+    /**
+     * Decodes the fields of the reg value passed to the method.
+     *
+     * @param reg the value to decode
+     */
     public void decodeReg( int reg )
     {
 /*
@@ -128,11 +195,12 @@ public class ControlReg {
 */
 
     }
-    //Decodes a given register and uses the decoded values to set this object's properties.
-/*
-        reg
-        The given register.
-*/
+
+    /**
+     * Encodes the decoded fields and returns the final int value.
+     *
+     * @return the security value
+     */
     public int encodeReg()
     {
         int reg = 0;
@@ -145,34 +213,25 @@ public class ControlReg {
 
         return reg;
     }
-    //Encodes the encapsulated properties into an integer value.
-/*
-        Returns:
-        The encoded integer value.
-*/
 
+    /**
+     * Overrides the toString method to return a formatted version
+     * of the objects decoded values.
+     *
+     * @return the security value
+     */
     public String toString()
     {
         String controlReg = "";
 
-        controlReg = "origin="+getOrigin()+",security="+getSecurity()+",data="+getData()+",count="+getCount()+",start="+getStart()+",control="+getControl();
+        controlReg = "origin="+getOrigin()
+                +",security="+getSecurity()
+                +",data="+getData()
+                +",count="+getCount()
+                +",start="+getStart()
+                +",control="+getControl();
 
         return controlReg;
     }
-    //Formats the values of the encapsulated properties into a human readable string. See above for formatting requirements.
-/*
-        Returns:
-        The formatted string.
-*/
-
-
-
-
-
-
-
-
-
-
 
 }

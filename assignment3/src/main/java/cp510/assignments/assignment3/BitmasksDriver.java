@@ -1,23 +1,18 @@
 package cp510.assignments.assignment3;
 
-public class BitMasksDriver {
+public class BitmasksDriver
+{
     public static void main(String[] args)
     {
         int reg1    = 0b0110_1_01_1000_11_001;
         int reg2    = 0b1000_0_10_0001_00_100;
         int reg3    = 0b1001_1_11_1110_11_011;
 
-        System.out.println(Integer.toBinaryString(reg1));
-        System.out.println(reg1);
-
         ControlReg  control1    = new ControlReg( reg1 );
         ControlReg  control2    = new ControlReg( reg2 );
         ControlReg  control3    = new ControlReg( reg3 );
 
-        //System.out.println( control1.getControl() );
-
         System.out.println( control1 );
-        System.out.println(control1.encodeReg());
         System.out.println( control2 );
         System.out.println( control3 );
         exerciseAccessors();
