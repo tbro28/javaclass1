@@ -2,40 +2,62 @@ package cp510.assignments.geo_shape;
 
 import java.awt.Color;
 
+/*
 import cp510.assignments.geo_shape.GeoLine;
 import cp510.assignments.geo_shape.GeoOval;
 import cp510.assignments.geo_shape.GeoPlane;
-import cp510.assignments.geo_shape.GeoPoint;
 import cp510.assignments.geo_shape.GeoRectangle;
 import cp510.assignments.geo_shape.GeoShape;
+*/
+
 
 public class GeoShapeDriverV1
 {
     public static void main(String[] args)
     {
-        GeoPoint    point1  = new GeoPoint();
+        GeoPoint point1  = new GeoPoint();
         point1.setXco( 5.55555 );;
         point1.setYco( 4.44444 );
 
-        GeoPoint    point2  = new GeoPoint();
+        GeoPoint point2  = new GeoPoint();
         point2.setXco( 54.66666 );
         point2.setYco( 133.33333 );
 
-        GeoPoint    point3  = new GeoPoint();
+        GeoPoint point3  = new GeoPoint();
         point3.setXco( 200 );
         point3.setYco( 400 );
 
-        GeoPoint    point4  = new GeoPoint();
+        GeoPoint point4  = new GeoPoint();
         point4.setXco( 1000 );
         point4.setYco( 2000 );
 
+        System.out.println(point1);
+        System.out.println(point2);
+        System.out.println(point3);
+        System.out.println(point4);
+
+        System.out.println(point3.distance(point4));
+
+//        point1.str();
+
+
+        GeoPoint point5  = new GeoPoint();
+
+        point5.setXco(.5);
+        point5.setYco(.5);
+        System.out.println(point5);
+
+
         GeoShape    shape   = new GeoShape();
+
         shape.setColor( null );
         System.out.println( shape );
         shape.setOrigin( point1 );
         System.out.println( shape );
         shape.setColor( Color.RED );
         System.out.println( shape );
+
+/*
 
         GeoRectangle    rect    = new GeoRectangle();
         rect.setColor( null );
@@ -78,7 +100,14 @@ public class GeoShapeDriverV1
         tryNullPoint( rect );
         tryNullPoint( oval );
         tryNullPoint( line );
+*/
+
+        tryNullPoint( shape );
+        System.out.println( new GeoPlane().getBackgroundColor() );
+
     }
+
+
 
     private static void tryNullPoint( GeoShape shape )
     {
@@ -94,4 +123,8 @@ public class GeoShapeDriverV1
             System.out.println( "passed" );
         }
     }
+
+
+
+
 }
