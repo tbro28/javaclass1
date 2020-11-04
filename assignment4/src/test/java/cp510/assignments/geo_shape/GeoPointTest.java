@@ -14,14 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class GeoPointTest
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
 
     /**
      * Validate that the x value is set correctly.
@@ -60,7 +52,8 @@ public class GeoPointTest
         point2.setYco(10);
 
         DecimalFormat dfDistance = new DecimalFormat("#.######");
-        double distance = Double.parseDouble(dfDistance.format(point1.distance(point2)));
+        double distance = Double.parseDouble(dfDistance
+                .format(point1.distance(point2)));
         System.out.println(distance);
 
         assertTrue(7.071068 == distance );

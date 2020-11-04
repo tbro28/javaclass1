@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit tests for the GeoPlane class.
+ *
+ * @author Tim
  */
 public class GeoPlaneTest {
 

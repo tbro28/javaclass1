@@ -10,7 +10,10 @@ import java.awt.Color;
  */
 public class GeoPlane {
 
-    Color backgroundColor;    // sets the background color
+    /**
+     * Sets the background color.
+     */
+    Color backgroundColor;
 
     /**
      * Constructor that sets the default color.
@@ -42,7 +45,7 @@ public class GeoPlane {
      * Removes the given shape from the list of shapes to draw on the plane.
      *
      * @param shape
-     * @return
+     * @return shape
      */
     public GeoShape removeShape( GeoShape shape ) {
 

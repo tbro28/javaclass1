@@ -3,11 +3,12 @@ package cp510.assignments.geo_shape;
 import org.junit.jupiter.api.Test;
 import java.awt.*;
 import java.text.DecimalFormat;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the GeoLine class.
+ *
+ * @author Tim
  */
 public class GeoLineTest {
 

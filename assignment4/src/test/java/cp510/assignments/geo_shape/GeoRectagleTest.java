@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Unit tests for the GeoRectangle class.
+ *
+ * @author Tim
  */
 public class GeoRectagleTest {
 

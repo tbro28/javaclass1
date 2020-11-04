@@ -40,7 +40,7 @@ public class GeoLine extends GeoShape {
             this.end = end;
         }
         catch (NullPointerException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
 
     }
