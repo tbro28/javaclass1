@@ -3,8 +3,11 @@ package cp510.assignments.geo_shape;
 import java.text.DecimalFormat;
 import java.util.Formatter;
 
+
 /**
  * Encapsulates a point on a plane.
+ *
+ * @author Tim
  */
 public class GeoPoint
 {
@@ -31,19 +34,31 @@ public class GeoPoint
         this.xco = xco;
     }
 
-
+    /**
+     * Gets the y coordinate.
+     *
+     * @return yco
+     */
     public double getYco() {
         return yco;
     }
 
+    /**
+     * Sets the y coordinate.
+     *
+     * @param yco
+     */
     public void setYco(double yco) {
         this.yco = yco;
     }
 
-
+    /**
+     * Computes the distance between this point and a given point.
+     *
+     * @param other
+     * @return distance
+     */
     public double distance(GeoPoint other) {
-
-        //https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php
 
         double xDistanceValue = 0;
         double yDistanceValue = 0;
@@ -56,16 +71,11 @@ public class GeoPoint
 
     }
 
-/*
-    public void str(){
-        StringBuilder sb = new StringBuilder();
-        Formatter formatter = new Formatter(sb);
-        formatter.format("%.4f", 4.0);     // 4 decimal places
-
-        System.out.println(formatter);
-    }
-*/
-
+    /**
+     * Returns a string representing the value of this point.
+     *
+     * @return
+     */
     @Override
     public String toString() {
 

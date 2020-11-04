@@ -57,7 +57,7 @@ public class GeoShapeDriverV1
         shape.setColor( Color.RED );
         System.out.println( shape );
 
-/*
+
 
         GeoRectangle    rect    = new GeoRectangle();
         rect.setColor( null );
@@ -70,6 +70,12 @@ public class GeoShapeDriverV1
         rect.setWidth( 5 );
         rect.setHeight( 10 );
         System.out.println( rect );
+        System.out.println( rect.area() );
+        System.out.println( rect.perimeter() );
+
+
+
+
 
         GeoOval oval    = new GeoOval();
         oval.setColor( null );
@@ -87,11 +93,19 @@ public class GeoShapeDriverV1
         line.setColor( null );
         line.setOrigin( point3 );
         line.setEnd( point1 );
+
         System.out.println( line );
+
         line.setColor( Color.GREEN );
         System.out.println( line );
+
         line.setStart( point2 );
-        System.out.println( line );
+        System.out.println("===" + line );
+        line.setEnd( point3 );
+        System.out.println("___" + line );
+
+
+        System.out.println(line.length());
 
         System.out.println( new GeoPlane().getBackgroundColor() );
 
@@ -100,7 +114,7 @@ public class GeoShapeDriverV1
         tryNullPoint( rect );
         tryNullPoint( oval );
         tryNullPoint( line );
-*/
+
 
         tryNullPoint( shape );
         System.out.println( new GeoPlane().getBackgroundColor() );

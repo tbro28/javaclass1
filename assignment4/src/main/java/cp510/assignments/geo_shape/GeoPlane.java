@@ -2,8 +2,11 @@ package cp510.assignments.geo_shape;
 
 import java.awt.Color;
 
+
 /**
  * Encapsulates a set of GeoShape objects displayed on a plane.
+ *
+ * @author Tim
  */
 public class GeoPlane {
 
