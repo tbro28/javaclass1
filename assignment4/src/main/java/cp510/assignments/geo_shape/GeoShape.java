@@ -2,7 +2,6 @@ package cp510.assignments.geo_shape;
 
 import java.awt.Color;
 
-
 /**
  * Encapsulates functionality common to all shapes in the geo_shape package.
  *
@@ -19,7 +18,6 @@ public class GeoShape {
     public GeoShape(){
 
         this.origin = new GeoPoint();
-
     }
 
     /**
@@ -105,4 +103,5 @@ public class GeoShape {
 
         return sb.toString();
     }
+
 }

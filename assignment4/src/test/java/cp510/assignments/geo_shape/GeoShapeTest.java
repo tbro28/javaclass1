@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 public class GeoShapeTest {
 
-
     /**
      * Validate that the x value is not set to null.
      */
@@ -113,9 +112,7 @@ public class GeoShapeTest {
         point.setYco(2);
 
         shape.setOrigin( point );
-        System.out.println( shape );
         shape.setColor( Color.RED );
-        System.out.println( shape );
         assertTrue( "origin=(1.0000,2.0000),color=#FF0000"
                 .equals(shape.toString()) );
     }
@@ -133,12 +130,9 @@ public class GeoShapeTest {
         point.setYco(2);
 
         shape.setOrigin( point );
-        System.out.println( shape );
         shape.setColor( null );
-        System.out.println( shape );
         assertEquals( "origin=(1.0000,2.0000),color=null", shape.toString() );
     }
-
 
     /**
      * Validate that constructor with GeoPoint object is valid.

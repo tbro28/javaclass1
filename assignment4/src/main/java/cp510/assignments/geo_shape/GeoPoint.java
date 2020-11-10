@@ -1,8 +1,6 @@
 package cp510.assignments.geo_shape;
 
-import java.text.DecimalFormat;
 import java.util.Formatter;
-
 
 /**
  * Encapsulates a point on a plane.
@@ -79,29 +77,15 @@ public class GeoPoint
     @Override
     public String toString() {
 
-        // best way to format floating point numbers in Java
-        // beware it also round the numbers
-/*
-        DecimalFormat dfcXco = new DecimalFormat("#.####");
-        String formattedXco = dfcXco.format(xco);
-        DecimalFormat dfYco = new DecimalFormat("#.####");
-        String formattedYco = dfYco.format(yco);
-*/
-
         StringBuilder sb = new StringBuilder();
         Formatter formatted = new Formatter(sb);
         formatted.format("%.4f", xco);     // 4 decimal places
         formatted.format(",");
         formatted.format("%.4f", yco);
 
-        /*
-        Formatter formattedYco = new Formatter(sb);
-        formattedYco.format("%.4f", yco);     // 4 decimal places
-*/
-
-
         return "(" +
                 formatted +
                 ')';
     }
+
 }

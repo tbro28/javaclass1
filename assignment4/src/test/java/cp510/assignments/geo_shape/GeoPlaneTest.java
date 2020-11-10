@@ -1,11 +1,9 @@
 package cp510.assignments.geo_shape;
 
-
 import org.junit.jupiter.api.Test;
 import java.awt.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 
 /**
  * Unit tests for the GeoPlane class.
@@ -22,8 +20,6 @@ public class GeoPlaneTest {
     {
         GeoPlane plane = new GeoPlane();
 
-        System.out.println(plane.getBackgroundColor());
-        System.out.println(Color.gray);
         assertEquals( Color.GRAY, plane.getBackgroundColor() );
     }
 

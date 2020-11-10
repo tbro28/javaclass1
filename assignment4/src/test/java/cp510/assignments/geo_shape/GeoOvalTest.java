@@ -13,18 +13,22 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  */
 public class GeoOvalTest {
 
+    /**
+     * Validate that the area calculation is correct.
+     */
     @Test
     public void ovalArea() {
         GeoOval oval = new GeoOval();
         assertEquals(0, oval.area());
     }
 
+    /**
+     * Validate that the perimeter calculation is correct.
+     */
     @Test
     public void ovalPerimeter() {
         GeoOval oval = new GeoOval();
         assertEquals(0, oval.perimeter());
     }
-
-
 
 }

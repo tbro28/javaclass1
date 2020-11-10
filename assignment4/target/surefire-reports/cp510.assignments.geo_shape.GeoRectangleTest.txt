@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: cp510.assignments.geo_shape.GeoRectangleTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in cp510.assignments.geo_shape.GeoRectangleTest

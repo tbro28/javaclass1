@@ -84,9 +84,6 @@ public class GeoRectangle extends GeoShape {
         return super.toString()+
                 "," +
                 formatted;
-
-
-
-
     }
+
 }

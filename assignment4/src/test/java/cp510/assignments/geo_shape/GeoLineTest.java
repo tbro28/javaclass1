@@ -12,6 +12,9 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class GeoLineTest {
 
+    /**
+     * Validate that the x end value is set correctly.
+     */
     @Test
     public void geoLineSetEndX() {
         GeoLine line = new GeoLine();
@@ -21,6 +24,9 @@ public class GeoLineTest {
         assertEquals(point.getXco(), line.getEnd().getXco());
     }
 
+    /**
+     * Validate that the y end value is set correctly.
+     */
     @Test
     public void geoLineSetEndY() {
         GeoLine line = new GeoLine();
@@ -30,21 +36,18 @@ public class GeoLineTest {
         assertEquals(point.getXco(), line.getEnd().getXco());
     }
 
+    /**
+     * Validate that the end point can be set to null.
+     */
     @Test
     public void geoLineSetEndNull() {
         GeoLine line = new GeoLine();
-        GeoPoint point = new GeoPoint();
-        //point.setYco(null);
-        point = null;
-        line.setEnd(point);
-        line.setEnd(null);
-
- //       System.out.println(line.getEnd());
-        assertNull(line.getEnd());
-//        assertEquals(point, line.getEnd());
+        assertThrows(NullPointerException.class, () -> line.setEnd(null));
     }
 
-
+    /**
+     * Validate that the x start value is set correctly.
+     */
     @Test
     public void geoLineSetStartX() {
         GeoLine line = new GeoLine();
@@ -54,6 +57,9 @@ public class GeoLineTest {
         assertEquals(point.getXco(), line.getStart().getXco());
     }
 
+    /**
+     * Validate that the y start value is set correctly.
+     */
     @Test
     public void geoLineSetStartY() {
 
@@ -64,7 +70,9 @@ public class GeoLineTest {
         assertEquals(point.getYco(), line.getStart().getYco());
     }
 
-
+    /**
+     * Validate that the length calculation is correct.
+     */
     @Test
     public void geoLineLength() {
 
@@ -83,6 +91,9 @@ public class GeoLineTest {
         assertEquals("254.558", formatted);
     }
 
+    /**
+     * Validate that the GeoLine string is formatted correctly.
+     */
     @Test
     public void geoLineToString() {
 
@@ -97,11 +108,9 @@ public class GeoLineTest {
         line.setStart(point1);
         line.setEnd(point2);
         line.setColor(Color.BLUE);
-        System.out.println(line.toString());
 
         assertEquals("origin=(20.0000,20.0000),color=#0000FF," +
                 "end=(200.0000,200.0000)", line.toString());
     }
-
 
 }

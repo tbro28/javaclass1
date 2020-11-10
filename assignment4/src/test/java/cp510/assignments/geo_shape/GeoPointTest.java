@@ -1,11 +1,7 @@
 package cp510.assignments.geo_shape;
 
-//import static org.junit.Assert.assertTrue;
-//import org.junit.Test;
 import org.junit.jupiter.api.Test;
-
 import java.text.DecimalFormat;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -54,7 +50,6 @@ public class GeoPointTest
         DecimalFormat dfDistance = new DecimalFormat("#.######");
         double distance = Double.parseDouble(dfDistance
                 .format(point1.distance(point2)));
-        System.out.println(distance);
 
         assertTrue(7.071068 == distance );
     }
@@ -69,8 +64,6 @@ public class GeoPointTest
 
         point.setXco(1);
         point.setYco(2);
-
-        System.out.println(point);
 
         assertTrue( "(1.0000,2.0000)".equals(point.toString()) );
     }

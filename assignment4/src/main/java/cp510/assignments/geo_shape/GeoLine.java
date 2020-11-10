@@ -36,13 +36,10 @@ public class GeoLine extends GeoShape {
      */
     public void setEnd( GeoPoint end ) throws NullPointerException {
 
-        try {
+        if(end.equals(null))
+            throw new NullPointerException();
+        else
             this.end = end;
-        }
-        catch (NullPointerException e) {
-            System.out.println(e.getMessage());
-        }
-
     }
 
     /**
@@ -60,7 +57,6 @@ public class GeoLine extends GeoShape {
      * @param start
      */
     public void setStart( GeoPoint start ) {
-        //super.setOrigin(getEnd());
         super.setOrigin(start);
     }
 
@@ -71,13 +67,9 @@ public class GeoLine extends GeoShape {
      */
     public double length() {
 
-        //System.out.println(end.getXco()+" , "+super.getOrigin().getXco());
-
         double x = Math.pow((end.getXco() - getStart().getXco()), 2);
         double y = Math.pow((end.getYco() - getStart().getYco()), 2);
         double c = Math.sqrt((x+y));
-
-        //System.out.println(x+" , "+y+" , "+c);
 
         return c;
     }
@@ -93,4 +85,5 @@ public class GeoLine extends GeoShape {
                 "," +
                 "end=" + end;
     }
+
 }
