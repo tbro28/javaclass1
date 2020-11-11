@@ -1,30 +1,38 @@
 package cp510.assignments.assignment5;
 
+import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Arrays;
+import java.lang.Exception.*;
 
 /**
- *  Tests for the Matrix class.
+ * Tests for the Matrix class.
  *
  * @author Tim
  */
 public class MatrixTest {
 
+    /**
+     * Matrix to be used in the test cases.
+     */
     double[][] testMatrix1 = new double[][]
-            {
-                    { 1, 2, 3 },
-                    { 4, 5, 6 }
-            };
+        {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
 
+    /**
+     * Matrix to be used in the test cases.
+     */
     double[][] testMatrix2 = new double[][]
-            {
-                    { 7, 8 },
-                    { 9, 10 },
-                    { 11, 12 }
-            };
+        {
+            {7, 8},
+            {9, 10},
+            {11, 12}
+        };
 
 
     /**
@@ -34,11 +42,11 @@ public class MatrixTest {
     public void testMatrixException() {
 
         double[][] testError = new double[][]
-                {
-                        { 0, 1, 2 },
-                        { 3, 4, 5 },
-                        { 6, 7 }
-                };
+            {
+                {0, 1, 2},
+                {3, 4, 5},
+                {6, 7}
+            };
 
         assertThrows(MatrixException.class, () -> new Matrix(testError));
     }
@@ -50,10 +58,10 @@ public class MatrixTest {
     public void testAddMatrix() {
 
         double[][] testMatrixExpectedResult = new double[][]
-                {
-                        { 2, 4, 6 },
-                        { 8, 10, 12 }
-                };
+            {
+                {2, 4, 6},
+                {8, 10, 12}
+            };
 
         Matrix expectedMatrix = new Matrix(testMatrixExpectedResult);
         Matrix expectedMatrix2 = new Matrix(testMatrixExpectedResult);
@@ -61,15 +69,10 @@ public class MatrixTest {
         Matrix left = new Matrix(testMatrix1);
         Matrix right = new Matrix(testMatrix1);
 
-        //left.add(right);
-
-        //assertTrue(expectedMatrix.equals(left.add(right)));
-//        left.add(right)
-        assertTrue(expectedMatrix.toString().equals(left.add(right).toString()));
-        //assertEquals(expectedMatrix.toString(), expectedMatrix2.toString());
-
-       // assert
+        assertTrue(expectedMatrix.toString()
+                .equals(left.add(right).toString()));
     }
+
 
     /**
      * Validate subtracting two matrices.
@@ -78,26 +81,41 @@ public class MatrixTest {
     public void testSubtractMatrix() {
 
         double[][] testMatrixExpectedResult = new double[][]
-                {
-                        { 0, 0, 0 },
-                        { 0, 0, 0 }
-                };
+            {
+                {0, 0, 0},
+                {0, 0, 0}
+            };
 
         Matrix expectedMatrix = new Matrix(testMatrixExpectedResult);
-        Matrix expectedMatrix2 = new Matrix(testMatrixExpectedResult);
 
         Matrix left = new Matrix(testMatrix1);
         Matrix right = new Matrix(testMatrix1);
 
-        //assertTrue(expectedMatrix.toString().equals(left.subtract(right).toString()));
-        assertEquals(expectedMatrix.toString(), left.subtract(right).toString());
-
-
+        assertEquals(expectedMatrix.toString(),
+                left.subtract(right).toString());
     }
 
 
+    /**
+     * Validate multiple two matrices.
+     */
+    @Test
+    public void testMultipleMatrix() {
 
-    //MISSSSSSSSSSSSSSSSSSSSSSS MULT
+        double[][] testMatrixExpectedResult = new double[][]
+            {
+                {58, 64},
+                {139, 154}
+            };
+
+        Matrix expectedMatrix = new Matrix(testMatrixExpectedResult);
+
+        Matrix left = new Matrix(testMatrix1);
+        Matrix right = new Matrix(testMatrix2);
+
+        assertEquals(expectedMatrix.toString(),
+                left.multiply(right).toString());
+    }
 
 
     /**
@@ -107,17 +125,16 @@ public class MatrixTest {
     public void testMultipleScalerMatrix() {
 
         double[][] testMatrixExpectedResult = new double[][]
-                {
-                        { 2, 4, 6 },
-                        { 8, 10, 12 }
-                };
+            {
+                {2, 4, 6},
+                {8, 10, 12}
+            };
 
         Matrix expectedMatrix = new Matrix(testMatrixExpectedResult);
 
         Matrix left = new Matrix(testMatrix1);
 
         assertEquals(expectedMatrix.toString(), left.multiply(2.0).toString());
-
     }
 
 
@@ -127,25 +144,24 @@ public class MatrixTest {
     @Test
     public void testNegateMatrix() {
 
-        double[][] testMatrixNegate = new double[][]
-                {
-                        { -1, 2, -3 },
-                        { 4, -5, 6 }
-                };
+        double[][] stMatrixNegate = new double[][]
+            {
+                {-1, 2, -3},
+                {4, -5, 6}
+            };
 
         double[][] testMatrixExpectedResult = new double[][]
-                {
-                        { 1, -2, 3 },
-                        { -4, 5, -6 }
-                };
+            {
+                {1, -2, 3},
+                {-4, 5, -6}
+            };
 
         Matrix expectedMatrix = new Matrix(testMatrixExpectedResult);
 
-        Matrix left = new Matrix(testMatrixNegate);
+        Matrix left = new Matrix(stMatrixNegate);
 
-        //assertTrue(expectedMatrix.toString().equals(left.subtract(right).toString()));
-        assertEquals(expectedMatrix.toString(), left.negate().toString());
-
+        assertEquals(expectedMatrix.toString(),
+                left.negate().toString());
     }
 
 
@@ -156,18 +172,14 @@ public class MatrixTest {
     public void testElementMatrix() {
 
         double[][] testMatrixElements = new double[][]
-                {
-                        { -1, 2, -3 },
-                        { 4, -5, 6 }
-                };
-
-        //Matrix expectedMatrix = new Matrix(testMatrixCopy);
+            {
+                {-1, 2, -3},
+                {4, -5, 6}
+            };
 
         Matrix left = new Matrix(testMatrixElements);
 
-        //assertTrue(expectedMatrix.toString().equals(left.subtract(right).toString()));
         assertEquals(-5.0, left.getElement(1, 1));
-
     }
 
 
@@ -178,18 +190,17 @@ public class MatrixTest {
     public void testCopyMatrix() {
 
         double[][] testMatrixCopy = new double[][]
-                {
-                        { -1, 2, -3 },
-                        { 4, -5, 6 }
-                };
+            {
+                {-1, 2, -3},
+                {4, -5, 6}
+            };
 
         Matrix expectedMatrix = new Matrix(testMatrixCopy);
 
         Matrix left = new Matrix(testMatrixCopy);
 
-        //assertTrue(expectedMatrix.toString().equals(left.subtract(right).toString()));
-        assertEquals(testMatrixCopy.toString(), left.getData().toString());
-
+        assertEquals(testMatrixCopy.toString(),
+                left.getData().toString());
     }
 
 
@@ -200,27 +211,14 @@ public class MatrixTest {
     public void testRowMatrix() {
 
         double[][] testMatrixRow = new double[][]
-                {
-                        { -1, 2, -3 },
-                        { 4, -5, 6 }
-                };
+            {
+                {-1, 2, -3},
+                {4, -5, 6}
+            };
 
-        double[] testMatrixRowExpectedResult = new double[]
-                {
-                        4, -5, 6
-                };
-
-
-        //Matrix expectedMatrix = new Matrix(testMatrixCopy);
+        double[] testMatrixRowExpectedResult = new double[] { 4, -5, 6 };
 
         Matrix left = new Matrix(testMatrixRow);
-
-        System.out.println(left);
-
-        System.out.println(Arrays.equals(testMatrixRowExpectedResult, left.getRow(1)));
-
-        System.out.println(left.getRow(1).toString());
-        System.out.println(testMatrixRowExpectedResult.toString());
 
         assertTrue(Arrays.equals(testMatrixRowExpectedResult, left.getRow(1)));
     }
@@ -229,31 +227,76 @@ public class MatrixTest {
     /**
      * Validate getting a column from a matrix.
      */
- /*   @Test
+    @Test
     public void testColumnMatrix() {
 
         double[][] testMatrixColumn = new double[][]
-                {
-                        { -1, 2, -3 },
-                        { 4, -5, 6 }
-                };
+            {
+                {-1, 2, -3},
+                {4, -5, 6}
+            };
 
-        double[][] testMatrixColumnExpectedResult = new double[][]
-                {
-                        { 2 },
-                        { -5 }
-                };
-
-
-        //Matrix expectedMatrix = new Matrix(testMatrixCopy);
+        double[] testMatrixColumnExpectedResult = new double[] { 2, -5 };
 
         Matrix left = new Matrix(testMatrixColumn);
 
-        //assertTrue(expectedMatrix.toString().equals(left.subtract(right).toString()));
-        assertEquals(testMatrixColumnExpectedResult, left.get);
-
+        assertTrue(Arrays.equals(testMatrixColumnExpectedResult,
+                left.getCol(1)));
     }
-*/
 
 
+    /**
+     * Validate that two matrices are approximately equal.
+     */
+    @Test
+    public void testApproxEqualMatrix() {
+
+        double[][] testMatrix = new double[][]
+            {
+                {0001, 2, 3},
+                {4, 5, 7.99}
+            };
+
+        double epsilon = 1;
+
+        Matrix left = new Matrix(testMatrix1);
+        Matrix right = new Matrix(testMatrix);
+
+        assertTrue(left.approxEqual(right, 2));
+    }
+
+    /**
+     * Validate MatrixException with a string.
+     */
+    @Test
+    public void testMatrixExceptionString() {
+
+        MatrixException exceptionTest = new MatrixException("test");
+
+        assertNotNull(exceptionTest);
+    }
+
+
+    /**
+     * Validate MatrixException with a Throwable.
+     */
+    @Test
+    public void testMatrixExceptionThrowable() {
+
+        MatrixException exceptionTest = new MatrixException(new MatrixException());
+
+        assertNotNull(exceptionTest);
+    }
+
+
+    /**
+     * Validate MatrixException with a string and a Throwable.
+     */
+    @Test
+    public void testMatrixExceptionStringThrowable() {
+
+        MatrixException exceptionTest = new MatrixException("test", new MatrixException());
+
+        assertNotNull(exceptionTest);
+    }
 }

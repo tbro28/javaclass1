@@ -3,18 +3,16 @@ package cp510.assignments.assignment5;
 import java.lang.RuntimeException.*;
 import java.lang.Exception.*;
 import java.util.Formatter;
-//import java.lang.RuntimeException.matrix.*;
-
 
 
 /**
  *
- * capable of performing the following matrix operations:
- * ●	Addition
- * ●	Subtraction
- * ●	Scalar multiplication
- * ●	Negation
- * ●	Multiplication
+ * capable of performing the following matrix operations.
+ * 	Addition
+ * 	Subtraction
+ * 	Scalar multiplication
+ * 	Negation
+ * 	Multiplication
  *
  * @author Tim
  */
@@ -22,18 +20,9 @@ public class Matrix {
 
 
     /**
-     * Holds the double array
+     * Holds the double array.
      */
     private double[][] data;
-
-
-    /**
-     * TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-     * DELETE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     * Creates an empty matrix object.
-     *
-     */
-    public Matrix() {}
 
 
     /**
@@ -71,7 +60,7 @@ public class Matrix {
      * Adds a given matrix to this matrix. The result is a new matrix object.
      *
      * @param toAdd
-     * @return
+     * @return added matrices
      * @throws MatrixException
      */
     public Matrix add( Matrix toAdd ) throws MatrixException {
@@ -79,16 +68,19 @@ public class Matrix {
         int rows = data.length;
         int maxDataLength = 0;
         int maxToAddLength = 0;
-        double[][] addMatrix = new double[this.getNumRows()][this.getNumColumns()];
+        double[][] addMatrix = new double[this.getNumRows()]
+                [this.getNumColumns()];
 
-        if(this.getNumRows() != toAdd.getNumRows() || this.getNumColumns() != toAdd.getNumColumns())
-           throw new MatrixException();
+        if(this.getNumRows() != toAdd.getNumRows() ||
+                this.getNumColumns() != toAdd.getNumColumns())
+            throw new MatrixException();
 
         for(int i = 0; i < this.getNumRows(); i++) {
 
             for(int j = 0; j < this.getNumColumns(); j++) {
 
-                addMatrix[i][j] = this.getElement(i, j) + toAdd.getElement(i, j);
+                addMatrix[i][j] = this.getElement(i, j) +
+                        toAdd.getElement(i, j);
 
             }
 
@@ -96,49 +88,37 @@ public class Matrix {
 
         Matrix sumMatrix = new Matrix(addMatrix);
 
-        /*
-        for(int i = 0; i < data.length; i++) {
-            //for(int j = 0; j < data[i].length)
-            if(maxDataLength < data[i].length)
-                maxDataLength = data[i].length;
-        }
-
-        for(int i = 0; i < toAdd.get.length; i++) {
-            //for(int j = 0; j < data[i].length)
-            if(maxDataLength < data[i].length)
-                maxDataLength = data[i].length;
-        }
-*/
-
         return sumMatrix;
     }
 
 
     /**
      *
-     *     Subtracts a given matrix from this matrix. The result is a new matrix object.
+     * Subtracts a given matrix from this matrix.
+     * The result is a new matrix object.
      *
      * @param toSub
-     * @return
+     * @return subtracted result matrix
      * @throws MatrixException
      */
     public Matrix subtract( Matrix toSub ) throws MatrixException {
 
         int rows = data.length;
 
-        double[][] subMatrix = new double[this.getNumRows()][this.getNumColumns()];
+        double[][] subMatrix = new double[this.getNumRows()]
+                [this.getNumColumns()];
 
-        if(this.getNumRows() != toSub.getNumRows() || this.getNumColumns() != toSub.getNumColumns())
+        if(this.getNumRows() != toSub.getNumRows() ||
+                this.getNumColumns() != toSub.getNumColumns())
             throw new MatrixException();
 
         for(int i = 0; i < this.getNumRows(); i++) {
 
             for(int j = 0; j < this.getNumColumns(); j++) {
 
-                subMatrix[i][j] = this.getElement(i, j) - toSub.getElement(i, j);
-
+                subMatrix[i][j] = this.getElement(i, j) -
+                        toSub.getElement(i, j);
             }
-
         }
 
         Matrix subtractMatrix = new Matrix(subMatrix);
@@ -149,194 +129,106 @@ public class Matrix {
 
     /**
      *
-     * Multiplies this matrix times a given matrix; this matrix is the left operand.
+     * Multiplies this matrix times a given matrix;
+     * this matrix is the left operand.
      *
-     * @return
+     * @param toMul
+     * @return multiplied result matrix
      * @throws MatrixException
      */
-/*
     public Matrix multiply( Matrix toMul ) throws MatrixException {
 
-        //int rows = data.length;
-        int arrayLengthCount = this.getNumColumns(); //3
+        int leftRowCount = this.getNumRows();
+        int leftColCount = this.getNumColumns();
+        int rightRowCount = toMul.getNumRows();
+        int rightColCount = toMul.getNumColumns();
 
 
-        System.out.println("Final matrix dimensions equal first number: "+this.getNumRows()+", "+this.getNumColumns());
-        System.out.println("Final matrix dimensions equal: "+this.getNumRows()+", "+toMul.getNumColumns());
-
-        double[][] mulMatrix = new double[this.getNumRows()][toMul.getNumColumns()];
-
-        //this.getNumRows() != toMul.getNumRows() ||
-        if(this.getNumColumns() != toMul.getNumRows()) {
+        if(leftColCount != rightRowCount) {
             throw new MatrixException();
         }
 
+        double[][] dataIn = new double[leftRowCount][rightColCount];
+        Matrix matrixMultiplied = new Matrix(dataIn);
 
-        //[rows][cols]
-        double result = 0;
-        int rowCount = this.getNumRows(); //1
-        int colCounts = 0;
-        int rowCounts = 0;
+        double[][] itemMultiplied = new double[leftRowCount][rightColCount];;
 
-        int rCols = 0;
-
-        //Left row count
-        for(int rows = 0; rows < rowCount; rows++) {
-
-
-            //Right column count
-            for (int lCols = 0; lCols < toMul.getNumColumns(); lCols++) {
-
-          //      for (int lCols = 0; lCols < rowCount; lCols++) {
-                System.out.println("------------------------------------------");
-                rowCounts = 0;
-
-                //Left column count
-                for (int j = 0; j < arrayLengthCount; j++) {
-
-                    System.out.println("Left: counts rCols: "+rCols+", j: "+ j);
-                    System.out.println("Right: counts j: "+ j+", lCols: "+lCols);
-                    System.out.println("");
-
-                    //[rows][cols]
-                    System.out.println(this.getElement(rCols, j) +" *** "+ toMul.getElement(j, lCols));
-                    result += this.getElement(rCols, j) * toMul.getElement(j, lCols);
-//                    result += this.getElement(j, lCols) * toMul.getElement(lCols, j);
-                    System.out.println("Current total: " + result);
-
+        for(int i = 0; i < leftRowCount; i++) {
+            for (int j = 0; j < rightColCount; j++) {
+                for (int k = 0; k < leftColCount; k++) {
+                    itemMultiplied[i][j] += this.getElement(i, k) *
+                            toMul.getElement(k, j);
                 }
-
-                System.out.println("Out of inner most for loop.......................");
-                System.out.println("left column count: "+ arrayLengthCount);
-                System.out.println("total rows: "+ rowCount);
-                System.out.println("rows: "+rows);
-                System.out.println("lCols: "+lCols);
-                System.out.println("result: "+result);
-
-                System.out.println("Current row position: "+rowCounts+", column: "+colCounts);
-
-                System.out.println("");
-
-
-
-
-                //Should be 5,1
-                mulMatrix[colCounts][rowCounts] = result;
-
-                if(colCounts < toMul.getNumColumns())
-                    colCounts++;
-
-                if(rowCounts < toMul.getNumRows())
-                    rowCounts++;
-
             }
-
-            rCols++;
-
-//            if(colCount == rowCount)
-//                break;
-
-
         }
-*/
 
-        /*
-                for(int i = 0; i < this.getNumRows(); i++) {
-
-                    for(int j = 0; j < this.getNumColumns(); j++) {
-
-                        mulMatrix[i][j] = this.getElement(i, j) * toMul.getElement(i, j);
-
-                    }
-
-                }
-        */
-
-
-
-
-/*
-
-        Matrix multiplyMatrix = new Matrix(mulMatrix);
-        return multiplyMatrix;
-
-
+        Matrix matrixFinal = new Matrix(itemMultiplied);
+        return matrixFinal;
     }
-*/
-
-
-
-
-
-
-
 
 
     /**
      *
-     *     Multiplies this matrix by a given scalar.
+     * Multiplies this matrix by a given scalar.
      *
      * @param scalar
-     * @return
+     * @return multiplied matrix
      */
     public Matrix multiply( double scalar ) {
 
-        double[][] mulMatrix = new double[this.getNumRows()][this.getNumColumns()];
+        double[][] mulMatrix = new double[this.getNumRows()]
+                [this.getNumColumns()];
 
         for(int i = 0; i < this.getNumRows(); i++) {
 
             for(int j = 0; j < this.getNumColumns(); j++) {
 
                 mulMatrix[i][j] = this.getElement(i, j) * scalar;
-
             }
-
         }
 
         Matrix multiplyMatrix = new Matrix(mulMatrix);
 
         return multiplyMatrix;
-
     }
 
 
     /**
      *
-     *     Returns a new matrix which is the negation of this matrix.
+     * Returns a new matrix which is the negation of this matrix.
      *
-     * @return
+     * @return the negated values in a new matrix
      */
     public Matrix negate() {
 
-        double[][] negMatrix = new double[this.getNumRows()][this.getNumColumns()];
+        double[][] negMatrix = new double[this.getNumRows()]
+                [this.getNumColumns()];
 
         for(int i = 0; i < this.getNumRows(); i++) {
 
             for(int j = 0; j < this.getNumColumns(); j++) {
 
                 negMatrix[i][j] = -(this.getElement(i, j));
-
             }
-
         }
 
         Matrix negateMatrix = new Matrix(negMatrix);
 
         return negateMatrix;
-
     }
 
 
     /**
      *
-     * Returns the value of the element at a given row and column
+     * Returns the value of the element at a given row and column.
      *
      * @param row
      * @param col
-     * @return
+     * @return the specified element value
      * @throws IndexOutOfBoundsException
      */
-    public double getElement( int row, int col ) throws IndexOutOfBoundsException {
+    public double getElement( int row, int col )
+            throws IndexOutOfBoundsException {
         return this.data[row][col];
     }
 
@@ -345,7 +237,7 @@ public class Matrix {
      *
      * Returns an array which is a copy of the internal array.
      *
-     * @return
+     * @return a copy of the Matrix data
      */
     public double[][] getData() {
 
@@ -360,7 +252,7 @@ public class Matrix {
      * Returns a one-dimensional array containing a copy of the given row.
      *
      * @param row
-     * @return
+     * @return the specified row values
      * @throws IndexOutOfBoundsException
      */
     public double[] getRow( int row ) throws IndexOutOfBoundsException {
@@ -377,7 +269,7 @@ public class Matrix {
      * Returns a one-dimensional array reflecting the data in the given column.
      *
      * @param col
-     * @return
+     * @return the specified column values
      * @throws IndexOutOfBoundsException
      */
     public double[] getCol( int col ) throws IndexOutOfBoundsException {
@@ -398,7 +290,7 @@ public class Matrix {
      *
      * Returns the number of rows in this matrix.
      *
-     * @return
+     * @return the number of rows
      */
     public int getNumRows() {
         return data.length;
@@ -409,7 +301,7 @@ public class Matrix {
      *
      * Returns the number of columns in this matrix.
      *
-     * @return
+     * @return the number of columns
      */
     public int getNumColumns() {
         return data[0].length;
@@ -418,17 +310,40 @@ public class Matrix {
 
     /**
      *
-     * Returns true if this matrix is approximately equal to a given matrix. The two matrices are equal if:
-     * ●	They have the same number of rows.
-     * ●	They have the same number of columns.
-     * ●	Corresponding elements are approximately equal as determined
+     * Returns true if this matrix is approximately equal
+     * to a given matrix.
+     * The two matrices are equal if:
+     * 	They have the same number of rows.
+     * 	They have the same number of columns.
+     * 	Corresponding elements are approximately equal as determined
      *
      * @param test
      * @param epsilon
-     * @return
+     * @return whether the two matrices are approximately equal
      */
     public boolean approxEqual(Matrix test, double epsilon) {
-        return true;
+
+        boolean aprxEqual = true;
+
+
+        if(this.getNumRows() != test.getNumRows())
+            aprxEqual = false;
+
+        if(this.getNumColumns() != test.getNumColumns())
+            aprxEqual = false;
+
+        for(int row = 0; row < this.getNumRows(); row++) {
+
+            for (int col = 0; col < this.getNumColumns(); col++) {
+
+                if(Math.abs(this.getElement(row, col) -
+                        test.getElement(row, col)) >= epsilon) {
+                    aprxEqual = false;
+                }
+            }
+        }
+
+        return aprxEqual;
     }
 
 
@@ -436,14 +351,13 @@ public class Matrix {
      * Overrides the toString method to return a formatted version
      * of the output.
      *
-     * @return
+     * @return the string representation of a Matrix
      */
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
         Formatter formatted = new Formatter(sb);
 
-        //formatted.format("%.4f", yco);
         int num = 0;
         String strItem = "";
 
@@ -453,42 +367,25 @@ public class Matrix {
 
             for (double item : data[i]) {
 
-                if(Math.abs(item) == item)
-                    formatted.format(" ");
-
                 num = (int)item;
                 strItem = Integer.toString(num);
                 num = strItem.length();
 
-//                System.out.println("Characters: " + num);
+                if(Math.abs(item) == item && num ==1)
+                    formatted.format("  ");
+                else if(Math.abs(item) == item && num ==2)
+                    formatted.format(" ");
+                else if(Math.abs(item) != item && num ==2)
+                    formatted.format(" ");
+                else if(Math.abs(item) != item && num ==1)
+                    formatted.format(" ");
 
                 formatted.format("%.3f", item);     // 4 decimal places
-
-                if(num == 2)
-                    formatted.format(" ");
-                else if(num == 1)
-                    formatted.format("  ");
-
-
-
-                if(Math.abs(item) == item)
-                    formatted.format(" ");
-                else
-                    formatted.format("  ");
-
-                //formatted.format(" ");
-
-
             }
+
             formatted.format(" |\n");
-
-
         }
-
 
         return formatted.toString();
     }
-
-
-
 }
