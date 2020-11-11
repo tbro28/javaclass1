@@ -9,13 +9,14 @@ import java.util.Formatter;
 
 /**
  *
- *
  * capable of performing the following matrix operations:
  * ●	Addition
  * ●	Subtraction
  * ●	Scalar multiplication
  * ●	Negation
  * ●	Multiplication
+ *
+ * @author Tim
  */
 public class Matrix {
 
@@ -153,31 +154,122 @@ public class Matrix {
      * @return
      * @throws MatrixException
      */
+/*
     public Matrix multiply( Matrix toMul ) throws MatrixException {
 
-        int rows = data.length;
+        //int rows = data.length;
+        int arrayLengthCount = this.getNumColumns(); //3
 
-        double[][] mulMatrix = new double[this.getNumRows()][this.getNumColumns()];
 
-        if(this.getNumRows() != toMul.getNumRows() || this.getNumColumns() != toMul.getNumColumns()) {
+        System.out.println("Final matrix dimensions equal first number: "+this.getNumRows()+", "+this.getNumColumns());
+        System.out.println("Final matrix dimensions equal: "+this.getNumRows()+", "+toMul.getNumColumns());
+
+        double[][] mulMatrix = new double[this.getNumRows()][toMul.getNumColumns()];
+
+        //this.getNumRows() != toMul.getNumRows() ||
+        if(this.getNumColumns() != toMul.getNumRows()) {
             throw new MatrixException();
         }
 
-        for(int i = 0; i < this.getNumRows(); i++) {
 
-            for(int j = 0; j < this.getNumColumns(); j++) {
+        //[rows][cols]
+        double result = 0;
+        int rowCount = this.getNumRows(); //1
+        int colCounts = 0;
+        int rowCounts = 0;
 
-                mulMatrix[i][j] = this.getElement(i, j) * toMul.getElement(i, j);
+        int rCols = 0;
+
+        //Left row count
+        for(int rows = 0; rows < rowCount; rows++) {
+
+
+            //Right column count
+            for (int lCols = 0; lCols < toMul.getNumColumns(); lCols++) {
+
+          //      for (int lCols = 0; lCols < rowCount; lCols++) {
+                System.out.println("------------------------------------------");
+                rowCounts = 0;
+
+                //Left column count
+                for (int j = 0; j < arrayLengthCount; j++) {
+
+                    System.out.println("Left: counts rCols: "+rCols+", j: "+ j);
+                    System.out.println("Right: counts j: "+ j+", lCols: "+lCols);
+                    System.out.println("");
+
+                    //[rows][cols]
+                    System.out.println(this.getElement(rCols, j) +" *** "+ toMul.getElement(j, lCols));
+                    result += this.getElement(rCols, j) * toMul.getElement(j, lCols);
+//                    result += this.getElement(j, lCols) * toMul.getElement(lCols, j);
+                    System.out.println("Current total: " + result);
+
+                }
+
+                System.out.println("Out of inner most for loop.......................");
+                System.out.println("left column count: "+ arrayLengthCount);
+                System.out.println("total rows: "+ rowCount);
+                System.out.println("rows: "+rows);
+                System.out.println("lCols: "+lCols);
+                System.out.println("result: "+result);
+
+                System.out.println("Current row position: "+rowCounts+", column: "+colCounts);
+
+                System.out.println("");
+
+
+
+
+                //Should be 5,1
+                mulMatrix[colCounts][rowCounts] = result;
+
+                if(colCounts < toMul.getNumColumns())
+                    colCounts++;
+
+                if(rowCounts < toMul.getNumRows())
+                    rowCounts++;
 
             }
 
+            rCols++;
+
+//            if(colCount == rowCount)
+//                break;
+
+
         }
+*/
+
+        /*
+                for(int i = 0; i < this.getNumRows(); i++) {
+
+                    for(int j = 0; j < this.getNumColumns(); j++) {
+
+                        mulMatrix[i][j] = this.getElement(i, j) * toMul.getElement(i, j);
+
+                    }
+
+                }
+        */
+
+
+
+
+/*
 
         Matrix multiplyMatrix = new Matrix(mulMatrix);
-
         return multiplyMatrix;
 
+
     }
+*/
+
+
+
+
+
+
+
 
 
     /**
@@ -247,11 +339,6 @@ public class Matrix {
     public double getElement( int row, int col ) throws IndexOutOfBoundsException {
         return this.data[row][col];
     }
-
-
-
-
-
 
 
     /**
@@ -345,20 +432,57 @@ public class Matrix {
     }
 
 
+    /**
+     * Overrides the toString method to return a formatted version
+     * of the output.
+     *
+     * @return
+     */
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
         Formatter formatted = new Formatter(sb);
 
         //formatted.format("%.4f", yco);
-
+        int num = 0;
+        String strItem = "";
 
         for(int i = 0; i < data.length; i++) {
+
+            formatted.format("| ");
+
             for (double item : data[i]) {
+
+                if(Math.abs(item) == item)
+                    formatted.format(" ");
+
+                num = (int)item;
+                strItem = Integer.toString(num);
+                num = strItem.length();
+
+//                System.out.println("Characters: " + num);
+
                 formatted.format("%.3f", item);     // 4 decimal places
-                formatted.format(",");
+
+                if(num == 2)
+                    formatted.format(" ");
+                else if(num == 1)
+                    formatted.format("  ");
+
+
+
+                if(Math.abs(item) == item)
+                    formatted.format(" ");
+                else
+                    formatted.format("  ");
+
+                //formatted.format(" ");
+
+
             }
-            formatted.format("\n");
+            formatted.format(" |\n");
+
+
         }
 
 

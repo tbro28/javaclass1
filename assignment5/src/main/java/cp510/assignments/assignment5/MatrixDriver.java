@@ -97,7 +97,7 @@ public class MatrixDriver
 
         if ( left.getNumColumns() == right.getNumRows() )
         {
-            result = left.multiply( right );
+//            result = left.multiply( right );
             System.out.println( prefix + "Product " + ident );
             System.out.println( result );
         }
