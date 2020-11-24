@@ -1,6 +1,7 @@
-package cp510.assignments;
+package cp510.assignments.geoshape;
 
 import uw.syp.java.tools.GWindow;
+import uw.syp.java.tools.GWindowUser;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -11,37 +12,53 @@ import java.util.List;
  *
  * @author Tim
  */
-public class GeoPlane {
+public class GeoPlane implements GWindowUser {
 
     /**
-     * Sets the background color.
+     * The background color.
      */
     Color backgroundColor;
 
-    List<GeoShape> geoList; //' = new ArrayList<GeoShape>();
-    GWindow gWindow;
+    List<GeoShape> geoList = new ArrayList<GeoShape>();
+//    ArrayList<GeoShape>();
+
+    GWindow gWindow = new GWindow(1, 1);
 
     /**
-     * Constructor that sets the default color.
+     * Constructor that sets the default background color.
      */
     GeoPlane() {
         backgroundColor = new Color( .5f, .5f, .5f);
     }
 
+    /**
+     *
+     * Constructor that sets the background color.
+     *
+     * @param color
+     */
     public GeoPlane(Color color) {
         this.backgroundColor = color;
     }
 
+
+    /**
+     *
+     * Adds the shapes to draw.
+     *
+     * @param gtx
+     */
     public void redraw( Graphics2D gtx ) {
-
+        for (GeoShape shape : geoList) {
+            shape.draw(gtx);  //currently prints the console output.
+        }
     }
-
 
     /**
      * Explicitly draws the shapes in the list of shapes.
      */
     public void redraw() {
-
+        gWindow.repaint();
     }
 
 
@@ -61,6 +78,13 @@ public class GeoPlane {
      */
     public void addShape( GeoShape shape ) {
 
+//        try {
+            geoList.add(shape);
+ /*       }
+        catch (NullPointerException e) {
+            System.out.println("Null shape: " + e);
+            e.printStackTrace();
+        }*/
     }
 
     /**
@@ -72,18 +96,26 @@ public class GeoPlane {
      */
     public GeoShape removeShape( GeoShape shape ) {
 
-        return shape;
+        GeoShape shapeToRemove;
+
+        if(geoList.remove(shape))
+            shapeToRemove = shape;
+        else
+            shapeToRemove = null;
+
+        return shapeToRemove;
     }
 
 
+    /**
+     *
+     * Returns a List object of all the current shapes.
+     *
+     * @return geoList
+     */
     public List<GeoShape> getShapes() {
         return geoList;
     }
-
-
-
-
-
 
 
 

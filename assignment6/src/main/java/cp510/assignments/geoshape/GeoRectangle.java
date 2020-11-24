@@ -1,4 +1,4 @@
-package cp510.assignments;
+package cp510.assignments.geoshape;
 
 
 import java.awt.*;
@@ -83,6 +83,13 @@ public class GeoRectangle extends GeoShape {
         return width+width+height+height;
     }
 
+
+    /**
+     *
+     * Draw the current object.
+     *
+     * @param gtx
+     */
     @Override
     public void draw(Graphics2D gtx) {
         System.out.println("Drawing rectangle: " + this.toString());

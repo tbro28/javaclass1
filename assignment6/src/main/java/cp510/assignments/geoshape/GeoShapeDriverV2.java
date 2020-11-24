@@ -1,4 +1,4 @@
-package cp510.assignments;
+package cp510.assignments.geoshape;
 
 
 import java.awt.Color;

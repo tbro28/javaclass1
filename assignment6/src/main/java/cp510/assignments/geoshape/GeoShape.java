@@ -1,4 +1,4 @@
-package cp510.assignments;
+package cp510.assignments.geoshape;
 
 import java.awt.*;
 import java.util.Formatter;
@@ -13,8 +13,8 @@ public abstract class GeoShape {
     /**
      * Constants.
      */
-    public static final Color DEFAULT_COLOR = BLUE;
-    public static final Color DEFAULT_EDGE_COLOR = BLACK;
+    public static final Color DEFAULT_COLOR = Color.BLUE;
+    public static final Color DEFAULT_EDGE_COLOR = Color.BLACK;
     public static final double DEFAULT_EDGE_WIDTH = 1;
     public static final GeoPoint DEFAULT_ORIGIN = new GeoPoint( 0, 0 );
 
@@ -25,29 +25,6 @@ public abstract class GeoShape {
     private Color color;
     private Color edgeColor;
     private double edgeWidth;
-
-
-
-//    /**
-//     * Constructor for GeoShape objects.
-//     */
-//    public GeoShape(){
-//
-//        this.origin = new GeoPoint();
-//    }
-//
-//    /**
-//     * Constructor for GeoShape objects with an origin.
-//     *
-//     * @param origin
-//     */
-//    GeoShape(GeoPoint origin) {
-//        this.origin = origin;
-//    }
-
-
-
-
 
     /**
      *  Constructor for GeoShape objects with an origin and color.
@@ -63,8 +40,9 @@ public abstract class GeoShape {
 
         this.origin = origin;
         this.color = color;
+        this.edgeColor = DEFAULT_EDGE_COLOR;
+        this.edgeWidth = DEFAULT_EDGE_WIDTH;
     }
-
 
     /**
      *
@@ -130,6 +108,9 @@ public abstract class GeoShape {
      */
     public void setOrigin(GeoPoint origin) throws NullPointerException {
         //this.origin = origin;
+        if(origin == null)
+            throw new NullPointerException("GeoPoint is null.");
+
         this.origin.setXco(origin.getXco());
         this.origin.setYco(origin.getYco());
     }
@@ -185,7 +166,7 @@ public abstract class GeoShape {
             sb.append(",edgeColor=" + edgeColor);
 
         Formatter formatted = new Formatter(sb);
-        formatted.format("%.4f", edgeWidth);     // 4 decimal places
+        formatted.format(",edgeWidth:=%.4f", edgeWidth);     // 4 decimal places
 
         return sb.toString();
     }
