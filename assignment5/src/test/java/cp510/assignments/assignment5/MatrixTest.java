@@ -48,7 +48,7 @@ public class MatrixTest {
                 {6, 7}
             };
 
-        assertThrows(MatrixException.class, () -> new Matrix(testError));
+        assertThrows(NuMatrixException.class, () -> new Matrix(testError));
     }
 
     /**
@@ -283,7 +283,8 @@ public class MatrixTest {
     @Test
     public void testMatrixExceptionThrowable() {
 
-        MatrixException exceptionTest = new MatrixException(new MatrixException());
+        MatrixException exceptionTest =
+                new MatrixException(new MatrixException());
 
         assertNotNull(exceptionTest);
     }
@@ -295,7 +296,8 @@ public class MatrixTest {
     @Test
     public void testMatrixExceptionStringThrowable() {
 
-        MatrixException exceptionTest = new MatrixException("test", new MatrixException());
+        MatrixException exceptionTest =
+                new MatrixException("test", new MatrixException());
 
         assertNotNull(exceptionTest);
     }
