@@ -161,9 +161,6 @@ public class GeoShapeTest {
         assertNotNull(shape);
     }
 
-
-//    GeoShape(GeoPoint origin, Color color) throws NullPointerException {
-
     /**
      * Validate that constructor with GeoPoint and Color object is valid.
      */
@@ -171,7 +168,8 @@ public class GeoShapeTest {
     public void shapeConstructorPointNullException()
     {
         Color color = Color.BLUE;
-        assertThrows(NullPointerException.class, () -> new GeoRectangle(null, color, 0, 0));
+        assertThrows(NullPointerException.class,
+                () -> new GeoRectangle(null, color, 0, 0));
     }
 
     /**
@@ -188,6 +186,19 @@ public class GeoShapeTest {
         assertEquals(edgeColor, shape.getEdgeColor());
     }
 
+    /**
+     * Validate the getEdgeWidth method.
+     */
+    @Test
+    public void shapeGetEdgeWidthMethod()
+    {
+        GeoPoint point = new GeoPoint();
+        Color color = Color.BLUE;
+        GeoShape shape = new GeoRectangle(point, color, 0, 0);
+        shape.setEdgeWidth(10);
+
+        assertEquals(10, shape.getEdgeWidth());
+    }
 
 
 }

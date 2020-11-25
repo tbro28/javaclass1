@@ -48,7 +48,8 @@ public class GeoOval extends GeoRectangle {
      * @param height
      * @throws NullPointerException
      */
-    public GeoOval(GeoPoint origin, Color color, double width, double height) throws NullPointerException {
+    public GeoOval(GeoPoint origin, Color color,
+                   double width, double height) throws NullPointerException {
         super(origin, color, width, height);
     }
 
@@ -83,15 +84,6 @@ public class GeoOval extends GeoRectangle {
      */
     @Override
     public String toString() {
-/*
-        StringBuilder sb = new StringBuilder();
-        Formatter formatted = new Formatter(sb);
-        formatted.format("edgeWidth=%.4f", this.getEdgeWidth());     // 4 decimal places
-        formatted.format(",");
-        formatted.format("width=%.4f", this.getWidth());     // 4 decimal places
-        formatted.format(",");
-        formatted.format("height=%.4f", this.getHeight());
-*/
         return super.toString();
     }
 

@@ -145,22 +145,26 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public boolean drawImage(Image img, AffineTransform xform, ImageObserver obs) {
+            public boolean drawImage(Image img,
+                                     AffineTransform xform, ImageObserver obs) {
                 return false;
             }
 
             @Override
-            public void drawImage(BufferedImage img, BufferedImageOp op, int x, int y) {
+            public void drawImage(BufferedImage img,
+                                  BufferedImageOp op, int x, int y) {
 
             }
 
             @Override
-            public void drawRenderedImage(RenderedImage img, AffineTransform xform) {
+            public void drawRenderedImage(RenderedImage img,
+                                          AffineTransform xform) {
 
             }
 
             @Override
-            public void drawRenderableImage(RenderableImage img, AffineTransform xform) {
+            public void drawRenderableImage(RenderableImage img,
+                                            AffineTransform xform) {
 
             }
 
@@ -175,12 +179,14 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public void drawString(AttributedCharacterIterator iterator, int x, int y) {
+            public void drawString(
+                    AttributedCharacterIterator iterator, int x, int y) {
 
             }
 
             @Override
-            public void drawString(AttributedCharacterIterator iterator, float x, float y) {
+            public void drawString(
+                    AttributedCharacterIterator iterator, float x, float y) {
 
             }
 
@@ -195,7 +201,8 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public boolean hit(Rectangle rect, Shape s, boolean onStroke) {
+            public boolean hit(Rectangle rect,
+                               Shape s, boolean onStroke) {
                 return false;
             }
 
@@ -220,12 +227,14 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public void setRenderingHint(RenderingHints.Key hintKey, Object hintValue) {
+            public void setRenderingHint(
+                    RenderingHints.Key hintKey, Object hintValue) {
 
             }
 
             @Override
-            public Object getRenderingHint(RenderingHints.Key hintKey) {
+            public Object getRenderingHint(
+                    RenderingHints.Key hintKey) {
                 return null;
             }
 
@@ -390,7 +399,8 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public void copyArea(int x, int y, int width, int height, int dx, int dy) {
+            public void copyArea(int x, int y, int width,
+                                 int height, int dx, int dy) {
 
             }
 
@@ -410,12 +420,14 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public void drawRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight) {
+            public void drawRoundRect(int x, int y, int width,
+                                      int height, int arcWidth, int arcHeight) {
 
             }
 
             @Override
-            public void fillRoundRect(int x, int y, int width, int height, int arcWidth, int arcHeight) {
+            public void fillRoundRect(int x, int y, int width,
+                                      int height, int arcWidth, int arcHeight) {
 
             }
 
@@ -430,57 +442,72 @@ public class GeoPlaneTest {
             }
 
             @Override
-            public void drawArc(int x, int y, int width, int height, int startAngle, int arcAngle) {
+            public void drawArc(int x, int y, int width,
+                                int height, int startAngle, int arcAngle) {
 
             }
 
             @Override
-            public void fillArc(int x, int y, int width, int height, int startAngle, int arcAngle) {
+            public void fillArc(int x, int y, int width,
+                                int height, int startAngle, int arcAngle) {
 
             }
 
             @Override
-            public void drawPolyline(int[] xPoints, int[] yPoints, int nPoints) {
+            public void drawPolyline(int[] xPoints,
+                                     int[] yPoints, int nPoints) {
 
             }
 
             @Override
-            public void drawPolygon(int[] xPoints, int[] yPoints, int nPoints) {
+            public void drawPolygon(int[] xPoints,
+                                    int[] yPoints, int nPoints) {
 
             }
 
             @Override
-            public void fillPolygon(int[] xPoints, int[] yPoints, int nPoints) {
+            public void fillPolygon(int[] xPoints,
+                                    int[] yPoints, int nPoints) {
 
             }
 
             @Override
-            public boolean drawImage(Image img, int x, int y, ImageObserver observer) {
+            public boolean drawImage(Image img, int x,
+                                     int y, ImageObserver observer) {
                 return false;
             }
 
             @Override
-            public boolean drawImage(Image img, int x, int y, int width, int height, ImageObserver observer) {
+            public boolean drawImage(Image img, int x, int y, int width,
+                                     int height, ImageObserver observer) {
                 return false;
             }
 
             @Override
-            public boolean drawImage(Image img, int x, int y, Color bgcolor, ImageObserver observer) {
+            public boolean drawImage(Image img, int x, int y, Color bgcolor,
+                                     ImageObserver observer) {
                 return false;
             }
 
             @Override
-            public boolean drawImage(Image img, int x, int y, int width, int height, Color bgcolor, ImageObserver observer) {
+            public boolean drawImage(Image img, int x, int y,
+                                     int width, int height,
+                                     Color bgcolor, ImageObserver observer) {
                 return false;
             }
 
             @Override
-            public boolean drawImage(Image img, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2, ImageObserver observer) {
+            public boolean drawImage(Image img, int dx1, int dy1, int dx2,
+                                     int dy2, int sx1, int sy1, int sx2,
+                                     int sy2, ImageObserver observer) {
                 return false;
             }
 
             @Override
-            public boolean drawImage(Image img, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2, Color bgcolor, ImageObserver observer) {
+            public boolean drawImage(Image img, int dx1, int dy1, int dx2,
+                                     int dy2, int sx1, int sy1, int sx2,
+                                     int sy2, Color bgcolor,
+                                     ImageObserver observer) {
                 return false;
             }
 

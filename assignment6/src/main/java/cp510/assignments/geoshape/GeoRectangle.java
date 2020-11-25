@@ -14,16 +14,41 @@ public class GeoRectangle extends GeoShape {
     private double width;
     private double height;
 
-
+    /**
+     *
+     * Constructor with parameters width, height.
+     *
+     * @param width
+     * @param height
+     */
     public GeoRectangle(double width, double height) {
         this(GeoShape.DEFAULT_ORIGIN, GeoShape.DEFAULT_COLOR, width, height);
     }
 
+    /**
+     *
+     * Constructor with parameters origin, width, height.
+     *
+     * @param origin
+     * @param width
+     * @param height
+     */
     public GeoRectangle(GeoPoint origin, double width, double height) {
         this(origin, GeoShape.DEFAULT_COLOR, width, height);
     }
 
-    public GeoRectangle(GeoPoint origin, Color color, double width, double height) throws NullPointerException {
+    /**
+     *
+     * Constructor with parameters origin, color, width, height.
+     *
+     * @param origin
+     * @param color
+     * @param width
+     * @param height
+     * @throws NullPointerException
+     */
+    public GeoRectangle(GeoPoint origin, Color color, double width,
+                        double height) throws NullPointerException {
         super(origin, color);
         this.width = width;
         this.height = height;

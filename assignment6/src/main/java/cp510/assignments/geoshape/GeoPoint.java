@@ -12,9 +12,21 @@ public class GeoPoint
     private double xco = 0.0;   // x coordinate
     private double yco = 0.0;   // y coordinate
 
+    /**
+     *
+     * Constructor with no parameters.
+     *
+     */
     public GeoPoint() {
     }
 
+    /**
+     *
+     * Constructor to set the x, y values.
+     *
+     * @param xco
+     * @param yco
+     */
     public GeoPoint(double xco, double yco) {
         this.xco = xco;
         this.yco = yco;

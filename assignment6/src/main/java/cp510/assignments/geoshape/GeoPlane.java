@@ -15,13 +15,18 @@ import java.util.List;
 public class GeoPlane implements GWindowUser {
 
     /**
-     * The background color.
+     * Holds the background color.
      */
     Color backgroundColor;
 
+    /**
+     * Initializes the list to hold the shapes for the program.
+     */
     List<GeoShape> geoList = new ArrayList<GeoShape>();
-//    ArrayList<GeoShape>();
 
+    /**
+     * Initializes the GWindow object for displaying shapes.
+     */
     GWindow gWindow = new GWindow(1, 1);
 
     /**
@@ -77,14 +82,7 @@ public class GeoPlane implements GWindowUser {
      * @param shape
      */
     public void addShape( GeoShape shape ) {
-
-//        try {
-            geoList.add(shape);
- /*       }
-        catch (NullPointerException e) {
-            System.out.println("Null shape: " + e);
-            e.printStackTrace();
-        }*/
+        geoList.add(shape);
     }
 
     /**

@@ -27,7 +27,8 @@ public class GeoLine extends GeoShape {
      * @throws NullPointerException
      */
     public GeoLine(GeoPoint start, GeoPoint end) throws NullPointerException {
-        this(start, end, GeoShape.DEFAULT_EDGE_COLOR, GeoShape.DEFAULT_EDGE_WIDTH);
+        this(start, end, GeoShape.DEFAULT_EDGE_COLOR,
+                GeoShape.DEFAULT_EDGE_WIDTH);
     }
 
 
@@ -45,7 +46,8 @@ public class GeoLine extends GeoShape {
      * @param width
      * @throws NullPointerException
      */
-    public GeoLine(GeoPoint start, GeoPoint end, double width) throws NullPointerException {
+    public GeoLine(GeoPoint start, GeoPoint end,
+                   double width) throws NullPointerException {
         this(start, end, GeoShape.DEFAULT_EDGE_COLOR, width);
     }
 
@@ -61,7 +63,8 @@ public class GeoLine extends GeoShape {
      * @param width
      * @throws NullPointerException
      */
-    public GeoLine(GeoPoint start, GeoPoint end, Color edgeColor, double width) throws NullPointerException {
+    public GeoLine(GeoPoint start, GeoPoint end,
+                   Color edgeColor, double width) throws NullPointerException {
         super(start, edgeColor);
         this.end = end;
         this.setEdgeWidth(width);

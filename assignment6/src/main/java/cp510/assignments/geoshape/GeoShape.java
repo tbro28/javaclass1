@@ -11,11 +11,23 @@ import java.util.Formatter;
 public abstract class GeoShape {
 
     /**
-     * Constants.
+     * Set the default color to black.
      */
     public static final Color DEFAULT_COLOR = Color.BLUE;
+
+    /**
+     * Set the default edge color to black.
+     */
     public static final Color DEFAULT_EDGE_COLOR = Color.BLACK;
+
+    /**
+     * Set the default edge width to 1.
+     */
     public static final double DEFAULT_EDGE_WIDTH = 1;
+
+    /**
+     * Set the default origin to 0,0.
+     */
     public static final GeoPoint DEFAULT_ORIGIN = new GeoPoint( 0, 0 );
 
     /**
@@ -56,7 +68,7 @@ public abstract class GeoShape {
      *
      * Get edge color.
      *
-     * @return
+     * @return the edge color.
      */
     public Color getEdgeColor() {
         return edgeColor;
@@ -76,7 +88,7 @@ public abstract class GeoShape {
      *
      * Get edge width.
      *
-     * @return
+     * @return the edge width.
      */
     public double getEdgeWidth() {
         return edgeWidth;
