@@ -14,7 +14,6 @@ public class GeoLine extends GeoShape {
      */
     private GeoPoint end;
 
-
     /**
      *
      * Sets the start and endpoints of this line to the given values.
@@ -30,7 +29,6 @@ public class GeoLine extends GeoShape {
         this(start, end, GeoShape.DEFAULT_EDGE_COLOR,
                 GeoShape.DEFAULT_EDGE_WIDTH);
     }
-
 
     /**
      *
@@ -50,7 +48,6 @@ public class GeoLine extends GeoShape {
                    double width) throws NullPointerException {
         this(start, end, GeoShape.DEFAULT_EDGE_COLOR, width);
     }
-
 
     /**
      *
@@ -72,7 +69,6 @@ public class GeoLine extends GeoShape {
         this.setColor(null);
     }
 
-
     /**
      * Returns the endpoint of this line.
      *
@@ -81,7 +77,6 @@ public class GeoLine extends GeoShape {
     public GeoPoint getEnd() {
         return end;
     }
-
 
     /**
      * Sets the endpoint of this line to the given value.
@@ -97,7 +92,6 @@ public class GeoLine extends GeoShape {
             this.end = end;
     }
 
-
     /**
      * Returns the starting point of this line.
      *
@@ -107,7 +101,6 @@ public class GeoLine extends GeoShape {
         return super.getOrigin();
     }
 
-
     /**
      * Sets the starting point of the line.
      *
@@ -116,7 +109,6 @@ public class GeoLine extends GeoShape {
     public void setStart( GeoPoint start ) {
         super.setOrigin(start);
     }
-
 
     /**
      * Returns the length of this line.
@@ -132,7 +124,6 @@ public class GeoLine extends GeoShape {
         return c;
     }
 
-
     /**
      *
      *Draws this line. For this part of your project
@@ -146,7 +137,6 @@ public class GeoLine extends GeoShape {
         System.out.println("Drawing line: " + this.toString());
     }
 
-
     /**
      *
      * This method overrides the GeoShape.setColor(Color) method.
@@ -159,7 +149,6 @@ public class GeoLine extends GeoShape {
     public void setColor(Color color) {
         super.setColor(color);
     }
-
 
     /**
      * Returns a string describing the properties of this line.

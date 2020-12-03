@@ -46,7 +46,6 @@ public class GeoPlane implements GWindowUser {
         this.backgroundColor = color;
     }
 
-
     /**
      *
      * Adds the shapes to draw.
@@ -65,7 +64,6 @@ public class GeoPlane implements GWindowUser {
     public void redraw() {
         gWindow.repaint();
     }
-
 
     /**
      * Causes the plane to become visible.
@@ -104,7 +102,6 @@ public class GeoPlane implements GWindowUser {
         return shapeToRemove;
     }
 
-
     /**
      *
      * Returns a List object of all the current shapes.
@@ -114,9 +111,6 @@ public class GeoPlane implements GWindowUser {
     public List<GeoShape> getShapes() {
         return geoList;
     }
-
-
-
 
     /**
      *

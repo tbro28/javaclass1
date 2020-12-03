@@ -94,7 +94,6 @@ public class GeoPlaneTest {
         assertNull(plane.removeShape(shape));
     }
 
-
     /**
      * Validate that a List of GeoShapes is returned.
      */
@@ -106,7 +105,6 @@ public class GeoPlaneTest {
         plane.addShape(shape);
         assertTrue(plane.getShapes().contains(shape));
     }
-
 
     /**
      * Validate that the redraw method.

@@ -71,12 +71,13 @@ public class GeoRectangleTest {
      */
     @Test
     public void rectangleString() {
-        GeoRectangle rectangle = new GeoRectangle(0, 0);
-        rectangle.setWidth(555.55555);
-        rectangle.setHeight(333.33333);
-        assertEquals("origin=(5.0000,5.0000),color=#0000FF," +
+        GeoRectangle rectangleStr = new GeoRectangle(0, 0);
+        rectangleStr.setWidth(555.55555);
+        rectangleStr.setHeight(333.33333);
+        rectangleStr.setOrigin(new GeoPoint(0, 0));
+        assertEquals("origin=(0.0000,0.0000),color=#0000FF," +
                 "edgeColor=#000000,edgeWidth:=1.0000,width=555.5556," +
-                "height=333.3333", rectangle.toString());
+                "height=333.3333", rectangleStr.toString());
     }
 
     /**

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: cp510.assignments.geoshape.GeoPointTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in cp510.assignments.geoshape.GeoPointTest

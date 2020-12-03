@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.Formatter;
 
 /**
- * Encapsulates functionality common to all shapes in the geo_shape package.
+ * Encapsulates functionality common to all shapes in the geoshape package.
  *
  * @author Tim
  */

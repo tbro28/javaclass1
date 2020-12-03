@@ -40,7 +40,7 @@ public class GeoOval extends GeoRectangle {
 
     /**
      *
-     *
+     * Constructor with 4 parameters.
      *
      * @param origin
      * @param color
