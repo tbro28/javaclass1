@@ -9,13 +9,10 @@ package cp510.assignments.assignment7;
  */
 public class DList extends DNode {
 
-
-
-
-
     /**
      *
-     *     Adds the given node to the head of this list. The implementation is given
+     *     Adds the given node to the head of this list.
+     *     The implementation is given
      *     in the class notes.
      *
       * @param node
@@ -40,10 +37,11 @@ public class DList extends DNode {
 
     /**
      *
-     *    Removes the first node from the list and returns it. If the list is empty
-     *    this is returned. The implementation is given in the class notes.
+     *    Removes the first node from the list and returns it.
+     *    If the list is empty this is returned.
+     *    The implementation is given in the class notes.
      *
-     * @return
+     * @return the head node that was removed.
      */
     public DNode removeHead() {
         DNode head = getNext();
@@ -53,25 +51,25 @@ public class DList extends DNode {
 
     /**
      *
-     *     Removes the last node from the list and returns it. If the list is empty
-     *     this is returned.
+     *     Removes the last node from the list and returns it.
+     *     If the list is empty this is returned.
      *
-      * @return
+      * @return the tail node that was removed.
      */
     public DNode removeTail() {
 
         DNode tail = getPrevious();
         return tail.remove();
-//        return this;
     }
 
 
     /**
      *
-     *     Returns the first node in the list (without removing it). If the list is
-     *     empty this is returned. The implementation is given in the class notes.
+     *     Returns the first node in the list (without removing it).
+     *     If the list is empty this is returned.
+     *     The implementation is given in the class notes.
      *
-      * @return
+      * @return the next node.
      */
     public DNode getHead() {
         return getNext();
@@ -80,10 +78,10 @@ public class DList extends DNode {
 
     /**
      *
-     *     Returns the last node in the list (without removing it). If the list is
-     *     empty this is returned.  Slide 62.
+     *     Returns the last node in the list (without removing it).
+     *     If the list is empty this is returned.  Slide 62.
      *
-     * @return
+     * @return the tail node.
      */
     public DNode getTail() {
         if(isEmpty())
@@ -95,8 +93,8 @@ public class DList extends DNode {
 
     /**
      *
-     *     Removes all items from the list, leaving the list empty. The implementation
-     *     is given in the class notes.
+     *     Removes all items from the list, leaving the list empty.
+     *     The implementation is given in the class notes.
      *
      */
     public void removeAll() {
@@ -110,7 +108,7 @@ public class DList extends DNode {
      *
      *     Returns true if this list is empty, false otherwise.
      *
-     * @return
+     * @return a boolean for whether the list is empty or not.
      */
     public boolean isEmpty() {
 
@@ -123,10 +121,10 @@ public class DList extends DNode {
 
     /**
      *
-     *     Returns the number of nodes in this list. The implementation is given in
-     *     the class notes.
+     *     Returns the number of nodes in this list.
+     *     The implementation is given in the class notes.
      *
-     * @return
+     * @return the size of the list.
      */
     public int size() {
 
@@ -139,37 +137,6 @@ public class DList extends DNode {
         }
 
         return count;
-/*
-
-        int count = 0;
-        DNode node = new DNode();
-
-        if(!this.isEmpty()) {
-//            while(this.getNext() != this)
-            while (node.getNext() != this) {
-                node = node.getNext();
-                count++;
-            }
-
-            node = this.getNext();
-
-            while (node != this) {
-                node = node.getNext();
-                count++;
-            }
-
-        }
-
-
-        return count;
-
- */
     }
-
-
-
-
-
-
 
 }

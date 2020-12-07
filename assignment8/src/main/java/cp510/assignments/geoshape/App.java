@@ -1,4 +1,4 @@
-package cp510.assignments.assignment7;
+package cp510.assignments.geoshape;
 
 /**
  * Hello world!

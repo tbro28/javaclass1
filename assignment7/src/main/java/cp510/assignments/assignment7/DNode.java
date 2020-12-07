@@ -13,13 +13,21 @@ public class DNode {
     private DNode blink;
     private Object data;
 
-
+    /**
+     * Empty constructor.
+     */
     public DNode() {
 
         this(null);
 
     }
 
+    /**
+     *
+     * Constructor with an object parameter.
+     *
+     * @param data
+     */
     public DNode(Object data) {
         flink = this;
         blink = this;
@@ -31,7 +39,7 @@ public class DNode {
      *
      * Returns the data stored in this object.
      *
-     * @return
+     * @return the data element of the node.
      */
     public Object getData() {
         return data;
@@ -50,21 +58,18 @@ public class DNode {
 
     /**
      *
-     * Returns true if this node is enqueued, false otherwise. The implementation is
-     * given in the class notes.
-     *
+     * Returns true if this node is enqueued, false otherwise.
+     * The implementation is given in the class notes.
      * Slide 50
      * Slide 41
      *
-     * @return
+     * @return a boolean in regards to whether the node is enqueued or not.
      */
     public boolean isEnqueued() {
-/*
-        boolean enqueued = false;
-        if(flink != this && blink != this)
-            enqueued = true;
-        return enqueued;
-*/
+
+        //If this does not equal flink, then true.
+        //If this does equal flink, then false,
+        // because this points to flink and is un-enqueued.
         boolean result = this != flink;
         return result;
 
@@ -72,7 +77,8 @@ public class DNode {
 
     /**
      *
-     * Enqueues the given node after this node.The implementation was illustrated in class.
+     * Enqueues the given node after this node.
+     * The implementation was illustrated in class.
      * Throws IllegalArgumentException if the given node is already enqueued.
      *
      * @param node
@@ -80,33 +86,19 @@ public class DNode {
      */
     public void addAfter( DNode node ) throws IllegalArgumentException {
 
-        DNode nodeAfter = this.flink;  //get the next node that this one object is pointing to.
-
-        //if(node.flink == node && node.blink == node)
         if(node.isEnqueued())
             throw new IllegalArgumentException();
-
-
-/*
-        nodeAfter.blink = node;     //point next node back link to the node to insert.
-        node.flink = nodeAfter;     //point the node to insert's next link to the next node.
-
-        this.flink = node;          //point this object's next link to the node to insert.
-        node.blink = this;          //point the node to insert's back link to this node.
-*/
-        //this.flink = node.blink;
 
         node.flink = flink;
         node.blink = this;
         node.flink.blink = node;
         flink = node;
-
-
     }
 
     /**
      *
-     * Enqueues the given node before this node.The implementation was illustrated in class.
+     * Enqueues the given node before this node.
+     * The implementation was illustrated in class.
      * Throws IllegalArgumentException if the given node is already enqueued.
      *
      * @param node
@@ -126,10 +118,11 @@ public class DNode {
 
     /**
      *
-     * Returns the next node in the list if enqueued. If not enqueued, returns this.
+     * Returns the next node in the list if enqueued.
+     * If not enqueued, returns this.
      * The implementation is given in the class notes.
      *
-      * @return
+      * @return the next node.
      */
     public DNode getNext() {
         return flink;
@@ -137,9 +130,10 @@ public class DNode {
 
     /**
      *
-     * Returns the previous node in the list if enqueued. If not enqueued, returns this.
+     * Returns the previous node in the list if enqueued.
+     * If not enqueued, returns this.
      *
-      * @return
+      * @return the previous node.
      */
     public DNode getPrevious() {
         return blink;
@@ -147,25 +141,25 @@ public class DNode {
 
     /**
      *
-     * Removes this node from the queue that contains it, if any. It is not a mistake if
+     * Removes this node from the queue that contains it, if any.
+     * It is not a mistake if
      * this node is not enqueued. Returns this.
      *
-     * @return
+     * @return the de-queued node.
      */
     public DNode remove() {
 
-        this.blink.flink = this.flink;  //set the back node flink to the node in front.
-        this.flink.blink = this.blink;  //set the front node blink to the node in back.
+        //set the back node flink to the node in front.
+        this.blink.flink = this.flink;
 
-        //dequeuing the current node.
+        //set the front node blink to the node in back.
+        this.flink.blink = this.blink;
+
+        //de-queuing the current node.
         this.blink = this;
         this.flink = this;
 
-//System.out.println("remove");
-
         return this;
     }
-
-
 
 }

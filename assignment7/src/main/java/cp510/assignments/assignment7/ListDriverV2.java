@@ -26,9 +26,7 @@ public class ListDriverV2
             printList( list );
         }
 
-//System.out.println("HERE");
-
-        System.out.println(list.size());
+        System.out.println("---Size should be 5: " + list.size());
 
         while ( !list.isEmpty() )
         {
@@ -58,6 +56,12 @@ public class ListDriverV2
             list.removeTail();
             printList( list );
         }
+
+        list.setData("---Remove tail for an already empty list.");
+
+        list.removeTail();
+
+        printList( list );
     }
 
     private static void addRemoveMiddle1()
