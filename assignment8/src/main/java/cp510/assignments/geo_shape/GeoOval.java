@@ -3,6 +3,8 @@ package cp510.assignments.geo_shape;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 /**
@@ -88,7 +90,14 @@ public class GeoOval extends GeoRectangle {
      * @return area
      */
     public double area() {
-        return 0;
+
+        double area = (this.getWidth()/2) * (this.getHeight()/2) * Math.PI;
+
+
+        DecimalFormat df = new DecimalFormat("#.####");
+        df.setRoundingMode(RoundingMode.HALF_UP);
+
+        return Double.parseDouble(df.format(area));
     }
 
     /**
