@@ -1,0 +1,33 @@
+package cp510.assignments.geoshape;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+
+import org.junit.jupiter.api.Test;
+
+class GeoShapeTest2
+{
+    @Test
+    void testGetOrigin()
+    {
+        GeoPoint    origin  = new GeoPoint( 1, 1 );
+        Color       color   = Color.RED;
+        ShapeTester tester  = new ShapeTester( origin, color );
+        assertEquals( origin, tester.getOrigin() );
+        assertEquals( color, tester.getColor() );
+    }
+    // . . .
+    private static class ShapeTester extends GeoShape
+    {
+        public ShapeTester(GeoPoint origin, Color color)
+                throws IllegalArgumentException
+        {
+            super(origin, color);
+        }
+        public void draw(Graphics2D gtx)
+        {
+        }
+    }
+}
