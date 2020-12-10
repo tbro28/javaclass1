@@ -70,7 +70,7 @@ public class ShapeDriver
         geoOvalEqualsCheck( oval1, null );
 
         GeoLine     line1   = new GeoLine( point1, point2, Color.RED, 1 );
-        GeoLine     line2   = new GeoLine( point1, point2, Color.RED, 1  );
+        GeoLine     line2   = new GeoLine( point1, point2, Color.BLUE, 1  );
         GeoLine     line3   = new GeoLine( point2, point3, Color.RED, 1 );
         geoLineEqualsCheck( line1, line2 );
         geoLineEqualsCheck( line1, line3 );

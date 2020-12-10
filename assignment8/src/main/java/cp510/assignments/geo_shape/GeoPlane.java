@@ -59,25 +59,12 @@ public class GeoPlane implements GWindowUser {
      */
     public void redraw( Graphics2D gtx ) {
 
-        //gtx.fill(shape);
-        //gtx.setBackground( Color.CYAN );
-        gtx.setColor(Color.DARK_GRAY);
+        //gtx.setColor(Color.DARK_GRAY);
         gtx.setColor( backgroundColor );
         gtx.fillRect(0,0, gWindow.getWidth(), gWindow.getHeight());
 
-        /*
-        int width   = 70;
-        int height  = 35;
-        gtx.setColor( Color.ORANGE );
-        gtx.fillRect( gWindow.getWidth()/2, gWindow.getHeight()/2, width, height );
-        */
-
-        //this.show();
-
-
         for (GeoShape shape : geoList) {
-            shape.draw(gtx);  //currently prints the console output.
-            //gtx.draw(shape);
+            shape.draw(gtx);
         }
     }
 
@@ -97,17 +84,18 @@ public class GeoPlane implements GWindowUser {
 
         gWindow.start();
         gWindow.repaint();
-
     }
 
+    /**
+     *
+     * Returns the bitmap currently drawn on the canvas.
+     * (Note that all you have to do is call the GWindow's getBitmap method.)
+     *
+     * @return returns the current bitmap
+     */
     public BufferedImage getBitmap() {
 
-        //Not sure either!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        return new BufferedImage(1,1,1);
-        //GWindow.class.get
-
         return null;
-
     }
 
     /**

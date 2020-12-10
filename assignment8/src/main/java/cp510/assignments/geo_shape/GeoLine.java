@@ -2,7 +2,7 @@ package cp510.assignments.geo_shape;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
-import java.awt.geom.Rectangle2D;
+import java.util.Objects;
 
 /**
  * Encapsulates a line.
@@ -142,12 +142,49 @@ public class GeoLine extends GeoShape {
 
         Line2D.Double line = new Line2D.Double();
 
-        //System.out.println("LINE!!!!!!");
-        line.setLine(getStart().getXco(), getStart().getYco(), end.getXco(), end.getYco());
+        line.setLine(getStart().getXco(), getStart().getYco(),
+                end.getXco(), end.getYco());
 
         draw(line, gtx);
+    }
 
-        //System.out.println("Drawing line: " + this.toString());
+    /**
+     *
+     * Returns true if a given object is equal to this object.
+     * The given object is equal to this object if:
+     * It is not null;
+     * It is a GeoLine;
+     * All corresponding properties in the GeoShape superclass are equal; and
+     * The corresponding endpoint properties are equal.
+     *
+     * @param other
+     * @return boolean for if they are equal
+     */
+    public boolean equals( Object other ) {
+
+        boolean isEquals = false;
+
+        if(other != null) {
+            if(other instanceof GeoLine) {
+                if(this.hashCode() == other.hashCode())
+                    isEquals = true;
+            }
+        }
+
+        return isEquals;
+    }
+
+    /**
+     *
+     * Calculates and returns a hashcode for this object.
+     *
+     * @return a hashcode.
+     */
+    @Override
+    public int hashCode()
+    {
+        int hash    = Objects.hash( super.hashCode(), getStart(), getEnd() );
+        return hash;
     }
 
     /**

@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.text.DecimalFormat;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the GeoPoint class.
@@ -88,6 +87,85 @@ public class GeoPointTest
     {
         GeoPoint point = new GeoPoint(1, 1);
         assertNotNull(point);
+    }
+
+    /**
+     * Validate the same x and y values.
+     */
+    @Test
+    public void validEqualsSameValues()
+    {
+        GeoPoint point1 = new GeoPoint();
+        GeoPoint point2 = new GeoPoint();
+
+        point1.setXco(5);
+        point1.setYco(10);
+        point2.setXco(5);
+        point2.setYco(10);
+
+        assertTrue(point1.equals(point2) );
+    }
+
+    /**
+     * Validate the different x values.
+     */
+    @Test
+    public void validNotEqualsDifferentXValues()
+    {
+        GeoPoint point1 = new GeoPoint();
+        GeoPoint point2 = new GeoPoint();
+
+        point1.setXco(5);
+        point1.setYco(10);
+        point2.setXco(10);
+        point2.setYco(10);
+
+        assertFalse(point1.equals(point2) );
+    }
+
+    /**
+     * Validate the different y values.
+     */
+    @Test
+    public void validNotEqualsNullValue()
+    {
+        GeoPoint point1 = new GeoPoint();
+        GeoPoint point2 = new GeoPoint();
+
+        point1.setXco(5);
+        point1.setYco(5);
+        point2.setXco(5);
+        point2.setYco(10);
+
+        assertFalse(point1.equals(point2) );
+    }
+
+    /**
+     * Validate the Equals null returns false.
+     */
+    @Test
+    public void validNotEqualsDifferentYValues()
+    {
+        GeoPoint point1 = new GeoPoint();
+
+        point1.setXco(5);
+        point1.setYco(5);
+
+        assertFalse(point1.equals(null) );
+    }
+
+    /**
+     * Validate the hashcode method.
+     */
+    @Test
+    public void validHashCode()
+    {
+        GeoPoint point1 = new GeoPoint();
+
+        point1.setXco(5);
+        point1.setYco(10);
+
+        assertEquals(42992577, point1.hashCode() );
     }
 
 }

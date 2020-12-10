@@ -124,20 +124,40 @@ public class GeoRectangle extends GeoShape {
 
         Rectangle2D.Double rec = new Rectangle2D.Double();
 
-        //Rectangle2D.Double rec2 = new Shape();
-
-        System.out.println("REC details: "+this.getOrigin().getXco()+"     "+this.getOrigin().getYco()+"     "+width+"     "+height);
-        rec.setRect(this.getOrigin().getXco(), this.getOrigin().getYco(), width, height);
+        rec.setRect(this.getOrigin().getXco(),
+                this.getOrigin().getYco(), width, height);
 
         draw(rec, gtx);
-        //draw(this, gtx);
-
-        //System.out.println("Drawing rectangle: " + this.toString());
-
-
-
     }
 
+
+    /**
+     *
+     * Returns true if a given object is equal to this object.
+     * The given object is equal to this object if:
+     * It is not null;
+     * It is a GeoRectangle;
+     * All corresponding properties in the GeoShape superclass are equal; and
+     * The corresponding width and height properties are equal.
+     *
+     * @param other
+     * @return boolean of whether they are equal
+     */
+    public boolean equals( Object other ) {
+
+        boolean isEqual = false;
+
+        if(other != null) {
+            if(other instanceof GeoRectangle) {
+                if(this.commonPropertiesEqual( (GeoRectangle) other)) {
+                    if(this.hashCode() == other.hashCode())
+                        isEqual = true;
+                }
+            }
+        }
+
+        return isEqual;
+    }
 
     /**
      *

@@ -2,7 +2,6 @@ package cp510.assignments.geo_shape;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Objects;
@@ -13,7 +12,7 @@ import java.util.Objects;
  * @author Tim
  */
 public class GeoOval extends GeoRectangle {
-    //public class GeoOval extends cp510.assignments.geo_shape.GeoRectangle {
+
     /**
      *
      * Sets the width and height of this oval to the given values.
@@ -69,19 +68,10 @@ public class GeoOval extends GeoRectangle {
 
         Ellipse2D.Double oval = new Ellipse2D.Double();
 
-        //System.out.println("LINE!!!!!!");
-        oval.setFrame(this.getOrigin().getXco(), this.getOrigin().getYco(), this.getWidth(), this.getHeight());
+        oval.setFrame(this.getOrigin().getXco(), this.getOrigin().getYco(),
+                this.getWidth(), this.getHeight());
 
         draw(oval, gtx);
-
-        //System.out.println("Drawing line: " + this.toString());
-
-
-
-
-
-
-        System.out.println("Drawing oval: " + this.toString());
     }
 
     /**
@@ -106,10 +96,45 @@ public class GeoOval extends GeoRectangle {
      * @return perimeter
      */
     public double perimeter() {
-        return 0;
+
+        double perimeter = (2 * Math.PI)
+                * Math.sqrt( ( Math.pow((getWidth()/2), 2)
+                + Math.pow((this.getHeight()/2), 2) ) / 2 );
+
+
+        DecimalFormat df = new DecimalFormat("#.####");
+        df.setRoundingMode(RoundingMode.HALF_UP);
+
+        return Double.parseDouble(df.format(perimeter));
+
     }
 
 
+    /**
+     *
+     * Returns true if a given object is equal to this object.
+     * The given object is equal to this object if:
+     * It is not null;
+     * It is a GeoOval;
+     * All corresponding properties in the GeoShape superclass are equal; and
+     * The corresponding width and height properties are equal.
+     *
+     * @param other
+     * @return boolean of whether they are equal
+     */
+    public boolean equals( Object other ) {
+
+        boolean isEquals = false;
+
+        if(other != null) {
+            if(other instanceof GeoOval) {
+                if(super.equals(other))
+                    isEquals = true;
+            }
+        }
+
+        return isEquals;
+    }
 
     /**
      *
