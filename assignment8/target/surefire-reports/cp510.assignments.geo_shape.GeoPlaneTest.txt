@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: cp510.assignments.geo_shape.GeoPlaneTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in cp510.assignments.geo_shape.GeoPlaneTest
