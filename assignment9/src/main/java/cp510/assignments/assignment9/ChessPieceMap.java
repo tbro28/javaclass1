@@ -47,8 +47,6 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
         //Returns null if the ChessPoint is not in the map.
 //WON'T THIS RETURN NULL if not found.
         return map.get(point);
-
-
     }
 
 
@@ -151,7 +149,7 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
         newGameMap.put(wKnightPoint1, wKnightPiece1);
         newGameMap.put(wKnightPoint2, wKnightPiece2);
 
-        //Place the bisops.
+        //Place the bishops.
         ChessPiece bBishopPiece1 = new Bishop(ChessColor.BLACK);
         ChessPiece bBishopPiece2 = new Bishop(ChessColor.BLACK);
         ChessPoint bBishopPoint1 = new ChessPoint(0,2);
@@ -168,16 +166,16 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
 
         //Place the Kings and queens.
         ChessPiece bKingPiece = new King(ChessColor.BLACK);
-        ChessPoint bKingPoint = new ChessPoint(0,4);
+        ChessPoint bKingPoint = new ChessPoint(0,3);
         ChessPiece bQueenPiece = new Queen(ChessColor.BLACK);
-        ChessPoint bQueenPoint = new ChessPoint(0,3);
+        ChessPoint bQueenPoint = new ChessPoint(0,4);
         newGameMap.put(bKingPoint, bKingPiece);
         newGameMap.put(bQueenPoint, bQueenPiece);
 
         ChessPiece wKingPiece = new King(ChessColor.WHITE);
-        ChessPoint wKingPoint = new ChessPoint(7,4);
+        ChessPoint wKingPoint = new ChessPoint(7,3);
         ChessPiece wQueenPiece = new Queen(ChessColor.WHITE);
-        ChessPoint wQueenPoint = new ChessPoint(7,3);
+        ChessPoint wQueenPoint = new ChessPoint(7,4);
         newGameMap.put(wKingPoint, wKingPiece);
         newGameMap.put(wQueenPoint, wQueenPiece);
 

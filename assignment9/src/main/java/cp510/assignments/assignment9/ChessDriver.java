@@ -15,9 +15,10 @@ public class ChessDriver
 
     public static void main(String[] args)
     {
-        /*
+
         newGame();
         validMovesRook();
+        /*
         validMovesBishop();
         driverConfig();
         */

@@ -23,7 +23,7 @@ public class Pawn extends ChessPiece {
      * @param color
      */
     public Pawn(ChessColor color) {
-        super("knight", "", color);
+        super("pawn", "", color);
     }
 
     /**

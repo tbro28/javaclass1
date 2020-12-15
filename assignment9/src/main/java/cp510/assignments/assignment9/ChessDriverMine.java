@@ -16,12 +16,11 @@ public class ChessDriverMine
     public static void main(String[] args)
     {
 
-        newGame();
-        validMovesRook();
-        /*
+        //newGame();
+//        validMovesRook();
         validMovesBishop();
-        driverConfig();
-        */
+//        driverConfig();
+
     }
 
     private static void newGame()
@@ -74,6 +73,9 @@ public class ChessDriverMine
 
         List<ChessPoint>    list    = rookW.getValidMoves( map );
         System.out.println( "White Rook" );
+
+        //System.out.println("MINE "+list.get(0));
+
         printList( list );
     }
 

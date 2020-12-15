@@ -18,7 +18,7 @@ public class Queen extends ChessPiece {
      * @param color
      */
     public Queen(ChessColor color) {
-        super("knight", "", color);
+        super("queen", "", color);
     }
 
     /**
