@@ -27,7 +27,7 @@ public class King extends ChessPiece {
      * If there are no valid moves an empty list will be returned.
      *
      * @param chessMap
-     * @return
+     * @return a list of valid moves.
      */
     public List<ChessPoint> getValidMoves(ChessPieceMap chessMap) {
 

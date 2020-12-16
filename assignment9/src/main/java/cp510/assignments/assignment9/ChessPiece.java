@@ -11,11 +11,26 @@ import java.util.List;
  */
 public abstract class ChessPiece {
 
-    String name;	    //the name of this chess piece, e.g. "bishop"
-    Image image;		//the image to draw on the chess board
-                        //Note: for this assignment this value will always be null
-    ChessColor color;	//the color of this chess piece
-    boolean isAlive;	//true if this chess piece has not been captured
+    /**
+     * The name of this chess piece, e.g. "bishop".
+     */
+    String name;
+
+    /**
+     * The image to draw on the chess board.
+     * Note: for this assignment this value will always be null.
+     */
+    Image image;
+
+    /**
+     * The color of this chess piece.
+     */
+    ChessColor color;
+
+    /**
+     * True if this chess piece has not been captured.
+     */
+    boolean isAlive;
 
 
     /**
@@ -44,7 +59,7 @@ public abstract class ChessPiece {
      *     should return an empty list (return new ArrayList<ChessPoint>()).
      *
      * @param chessMap
-     * @return
+     * @return valid moves.
      */
     public abstract List<ChessPoint> getValidMoves(ChessPieceMap chessMap);
 
@@ -52,7 +67,7 @@ public abstract class ChessPiece {
      *
      * Getter for the name property.
      *
-     * @return
+     * @return the chess piece name.
      */
     public String getName() {
         return name;
@@ -63,7 +78,7 @@ public abstract class ChessPiece {
      * Getter for the image property.
      * Note: for this assignment this method should return null.
      *
-     * @return
+     * @return the chess piece image.
      */
     public Image getImage() {
         return null;
@@ -73,7 +88,7 @@ public abstract class ChessPiece {
      *
      * Getter for this chess piece's color.
      *
-     * @return
+     * @return the chess piece color.
      */
     public ChessColor getColor() {
         return color;
@@ -81,9 +96,10 @@ public abstract class ChessPiece {
 
     /**
      *
-     * Getter for the isAlive property. Returns true if this piece has not been captured.
+     * Getter for the isAlive property.
+     * Returns true if this piece has not been captured.
      *
-     * @return
+     * @return if the chess piece is alive.
      */
     public boolean isAlive() {
         return isAlive;

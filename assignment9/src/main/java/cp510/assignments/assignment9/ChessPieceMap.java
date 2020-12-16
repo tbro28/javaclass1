@@ -14,6 +14,9 @@ import java.util.Map;
  */
 public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
 
+    /**
+     * Hashmap for the chess board.
+     */
     HashMap<ChessPoint, ChessPiece> map;
 
     /**
@@ -33,7 +36,7 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
      *     Returns null if the ChessPoint is not in the map.
      *
      * @param point
-     * @return
+     * @return a chess piece at a given point.
      * @throws ChessException
      */
     public ChessPiece get(ChessPoint point) throws ChessException{
@@ -56,7 +59,7 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
      * the given value cannot be found.
      *
      * @param piece
-     * @return
+     * @return a chess point for a given piece.
      */
     public ChessPoint getKey(ChessPiece piece) {
 
@@ -84,10 +87,11 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
      *
      * @param point
      * @param piece
-     * @return
+     * @return a chess piece that has been added to the chess map.
      * @throws ChessException
      */
-    public ChessPiece put(ChessPoint point, ChessPiece piece) throws ChessException {
+    public ChessPiece put(ChessPoint point, ChessPiece piece)
+            throws ChessException {
 
         ChessPiece addedChessPiece;
 
@@ -109,10 +113,11 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
 
     /**
      *
-     *     Instantiates a ChessMap with all pieces in the traditional start positions;
+     *     Instantiates a ChessMap with all pieces
+     *     in the traditional start positions;
      *     a black rook will be in square (0, 0).
      *
-     * @return
+     * @return a chess map with the pieces set to their initial positions.
      */
     public static ChessPieceMap newGame() {
 

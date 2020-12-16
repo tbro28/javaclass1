@@ -23,11 +23,12 @@ public class Queen extends ChessPiece {
 
     /**
      *
-     * Given the state of a chess board calculate all valid moves for this Queen.
+     * Given the state of a chess board calculate
+     * all valid moves for this Queen.
      * If there are no valid moves an empty list will be returned.
      *
      * @param chessMap
-     * @return
+     * @return a list of valid moves.
      */
     public List<ChessPoint> getValidMoves(ChessPieceMap chessMap) {
 

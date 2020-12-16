@@ -20,9 +20,9 @@ public class ChessPieceMapTest {
     @Test
     public void newMapPiecesCountTest() {
 
-       ChessPieceMap map = ChessPieceMap.newGame();
+        ChessPieceMap map = ChessPieceMap.newGame();
 
-       assertEquals(32, map.map.size());
+        assertEquals(32, map.map.size());
 
     }
 
@@ -38,7 +38,8 @@ public class ChessPieceMapTest {
 
         ChessPieceMap   map = new ChessPieceMap();
 
-        Throwable thrown = assertThrows(ChessException.class, () -> map.put( rookBPos, rookB ));
+        Throwable thrown = assertThrows(ChessException.class,
+                () -> map.put( rookBPos, rookB ));
         assertThat(thrown.getMessage(), is("Not a valid square."));
         assertThrows(ChessException.class, () -> map.put( rookBPos, rookB ));
     }
@@ -53,7 +54,8 @@ public class ChessPieceMapTest {
 
         ChessPieceMap   map = new ChessPieceMap();
 
-        Throwable thrown = assertThrows(ChessException.class, () -> map.put( rookBPos, null ));
+        Throwable thrown = assertThrows(ChessException.class,
+                () -> map.put( rookBPos, null ));
         assertThat(thrown.getMessage(), is("The piece provided is NULL."));
         assertThrows(ChessException.class, () -> map.put( rookBPos, null ));
     }
@@ -69,7 +71,8 @@ public class ChessPieceMapTest {
 
         ChessPieceMap   map = new ChessPieceMap();
 
-        Throwable thrown = assertThrows(ChessException.class, () -> map.put( rookBPos, rookB ));
+        Throwable thrown = assertThrows(ChessException.class,
+                () -> map.put( rookBPos, rookB ));
         assertThat(thrown.getMessage(), is("Not a valid square."));
         assertThrows(ChessException.class, () -> map.put( rookBPos, rookB ));
     }

@@ -41,7 +41,8 @@ public class ChessExceptionTest {
      */
     @Test
     public void chessExceptionNoArgsTest() {
-        assertThrows(ChessException.class, () -> throwsChessExceptions(0));
+        assertThrows(ChessException.class,
+                () -> throwsChessExceptions(0));
     }
 
     /**
@@ -49,17 +50,20 @@ public class ChessExceptionTest {
      */
     @Test
     public void chessExceptionStringArgTest() {
-        Throwable thrown = assertThrows(ChessException.class, () -> throwsChessExceptions(1));
+        Throwable thrown = assertThrows(ChessException.class,
+                () -> throwsChessExceptions(1));
         assertThat(thrown.getMessage(), is("Test error string."));
         assertThrows(ChessException.class, () -> throwsChessExceptions(1));
     }
 
     /**
-     * Test the invalid square exception handling String message and Throwable argument.
+     * Test the invalid square exception handling String message
+     * and Throwable argument.
      */
     @Test
     public void chessExceptionStringAndThrowableArgTest() {
-        Throwable thrown = assertThrows(ChessException.class, () -> throwsChessExceptions(2));
+        Throwable thrown = assertThrows(ChessException.class,
+                () -> throwsChessExceptions(2));
         assertThat(thrown.getMessage(), is("Test error string."));
         assertThrows(ChessException.class, () -> throwsChessExceptions(2));
     }
@@ -69,7 +73,8 @@ public class ChessExceptionTest {
      */
     @Test
     public void chessExceptionThrowableArgTest() {
-        Throwable thrown = assertThrows(ChessException.class, () -> throwsChessExceptions(3));
+        Throwable thrown = assertThrows(ChessException.class,
+                () -> throwsChessExceptions(3));
         //assertThat(thrown.getCause(), is(ChessException.class));
         assertThrows(ChessException.class, () -> throwsChessExceptions(3));
     }

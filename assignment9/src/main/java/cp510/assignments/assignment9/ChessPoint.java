@@ -14,7 +14,7 @@ public class ChessPoint {
     private int col; // the column of a square on the board
 
     /**
-     * Sets the row and col properties to (0, 0)
+     * Sets the row and col properties to (0, 0).
      */
     public ChessPoint() {
         row = 0;
@@ -50,11 +50,13 @@ public class ChessPoint {
      *
      *     Adds the given values to the row and column of this object.
      *     If the operation would cause either property to be less than 0
-     *     or greater than 7 the operation is not performed and false is returned.
+     *     or greater than 7 the operation is not performed
+     *     and false is returned.
      *
      * @param row
      * @param col
-     * @return
+     * @return a boolean for whether adding to
+     * the chess point positions was valid.
      */
     public boolean add( int row, int col ) {
 
@@ -80,9 +82,10 @@ public class ChessPoint {
      *
      *     Calculates a hash code for this ChessPoint. The algorithm produces
      *     a perfect hash in the range (0, 0) to (7, 7), inclusive.
-     *     There should never be a collision between two points on a chess board.
+     *     There should never be a collision between two points
+     *     on a chess board.
      *
-     * @return
+     * @return the hashcode of this chess point.
      */
     public int hashCode() {
 
@@ -94,11 +97,13 @@ public class ChessPoint {
     /**
      *
      *     Returns true if this ChessPoint is equal to the given object.
-     *     The objects are equal if the given object is non-null, is an instance of
-     *     ChessPoint and has the same row and column coordinates as this ChessPiece.
+     *     The objects are equal if the given object is non-null,
+     *     is an instance of
+     *     ChessPoint and has the same row and column coordinates
+     *     as this ChessPiece.
      *
      * @param obj
-     * @return
+     * @return whether the to points are equal.
      */
     public boolean equals(Object obj) {
 
@@ -106,7 +111,8 @@ public class ChessPoint {
 
         if(obj != null) {
             if(obj instanceof ChessPoint) {
-                if(this.row == ((ChessPoint) obj).getRow() && this.col == ((ChessPoint) obj).col) {
+                if(this.row == ((ChessPoint) obj).getRow()
+                        && this.col == ((ChessPoint) obj).col) {
                     areEqual = true;
                 }
             }
@@ -119,7 +125,7 @@ public class ChessPoint {
      *
      * Getter for the column property.
      *
-     * @return
+     * @return the column value for this chess point.
      */
     public int getCol() {
         return col;
@@ -139,7 +145,7 @@ public class ChessPoint {
      *
      * Getter for the row property.
      *
-     * @return
+     * @return the row value for this chess point.
      */
     public int getRow() {
         return row;
