@@ -1,12 +1,15 @@
 package cp510.assignments.assignment9;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for the Bishop class.
+ *
+ * @author Tim
+ */
 public class BishopTest {
 
 
