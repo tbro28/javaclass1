@@ -31,8 +31,9 @@ public abstract class ChessPiece {
     public ChessPiece(String name, String imagePath, ChessColor color) {
         this.name = name;
         this.color = color;
-        this.image = null;
-        //imagePath is always empty.
+        image = null;
+        isAlive = true;
+        //imagePath is not implemented and is always empty.
     }
 
     /**

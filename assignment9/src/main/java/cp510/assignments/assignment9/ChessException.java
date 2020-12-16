@@ -10,16 +10,6 @@ package cp510.assignments.assignment9;
  */
 public class ChessException extends RuntimeException {
 
-    /*
-    Constructors:
-public ChessException()
-public ChessException(String message)
-public ChessException(Throwable cause)
-public ChessException(String message, Throwable cause)
-
-     */
-
-
     /**
      * Constructs a new runtime exception with {@code null} as its
      * detail message.  The cause is not initialized, and may subsequently be

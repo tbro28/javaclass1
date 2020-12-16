@@ -116,7 +116,6 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
      */
     public static ChessPieceMap newGame() {
 
-        //HashMap<ChessPoint, ChessPiece> newMap = new ChessPieceMap();
         ChessPieceMap newGameMap = new ChessPieceMap();
 
         //Place the rooks.
@@ -180,8 +179,8 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
         newGameMap.put(wQueenPoint, wQueenPiece);
 
         //Place the pawns.
-        ChessPiece bPawnPiece;// = new Pawn(ChessColor.BLACK);
-        ChessPiece wPawnPiece;// = new Pawn(ChessColor.WHITE);
+        ChessPiece bPawnPiece;
+        ChessPiece wPawnPiece;
 
         for(int col = 0; col < 8; col++) {
             bPawnPiece = new Pawn(ChessColor.BLACK);
@@ -191,8 +190,5 @@ public class ChessPieceMap extends HashMap<ChessPoint,ChessPiece> {
         }
 
         return newGameMap;
-
     }
-
-
 }
