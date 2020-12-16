@@ -1,14 +1,14 @@
 package cp510.assignments.assignment9;
 
 import java.util.List;
-/*
+
 import cp510.assignments.assignment9.Bishop;
 import cp510.assignments.assignment9.ChessColor;
 import cp510.assignments.assignment9.ChessPiece;
 import cp510.assignments.assignment9.ChessPieceMap;
 import cp510.assignments.assignment9.ChessPoint;
 import cp510.assignments.assignment9.Rook;
-*/
+
 
 public class ChessDriverMine
 {
@@ -16,10 +16,10 @@ public class ChessDriverMine
     public static void main(String[] args)
     {
 
-        //newGame();
-//        validMovesRook();
+        newGame();
+        validMovesRook();
         validMovesBishop();
-//        driverConfig();
+        driverConfig();
 
     }
 
